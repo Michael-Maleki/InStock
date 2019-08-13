@@ -1,12 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import {BrowserRouter as Router, Switch, Route} from 'react-router-dom'
+//commented out to remove the warnings
+//import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+import Header from './components/Header/Header';
 
 class App extends React.Component {
   render() {
     return (
         <>
+        <Header/>
         </>
     );
   }
