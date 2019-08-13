@@ -16,7 +16,6 @@ class Header extends React.Component {
                 <div className="nav-bar__pages__inventory">Inventory</div>
                 <div className="nav-bar__pages__location">Location</div>
               </li>
-              
             </ul>
           </nav>
         </header>

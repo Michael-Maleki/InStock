@@ -3,7 +3,7 @@
   background-color: $nav-bg-fill;
 
   &__links {
-    @include font-family('AvenirDemiBold');
+    @include font-family('AvenirRegular');
     color: $text-field-bg-fill;
     height: 5.5rem;
     display: flex;
