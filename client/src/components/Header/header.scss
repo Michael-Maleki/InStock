@@ -1,0 +1,75 @@
+
+.nav-bar {
+  background-color: $nav-bg-fill;
+
+  &__links {
+    @include font-family('AvenirDemiBold');
+    color: $text-field-bg-fill;
+    height: 5.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    list-style-type: none;
+
+    @media screen and (min-width: 550px) {
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-end;  
+    }
+  }
+
+  &__logo {
+    padding-top: 0.8rem;
+
+    @media screen and (min-width: 426px) {
+      margin: 0 1.5rem;
+      padding: 0 0 1.5rem 0;
+        
+    }
+
+    @media screen and (min-width: 1025px) {
+      margin-left: 11.3rem;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+
+  &__pages {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+
+    @media screen and (min-width: 550px) {
+      width: 30%;   
+    }
+
+    @media screen and (min-width: 1200px) {
+      justify-content: space-evenly;
+    }
+
+    &__inventory, &__location {
+      width: 50%;
+      text-decoration: none;
+      color: white;
+      border-bottom: 3px solid #323232;
+      padding-bottom: 0.8rem;
+      text-align: center;
+
+      @media screen and (min-width: 426px) {
+        width: auto;
+        padding: 0 0.8rem 1.5rem 0.8rem;
+      }
+    }
+
+    &__inventory:hover, &__location:hover {
+      border-bottom: 3px solid white;
+    }
+
+    &__inventory:focus, &__location:focus {
+      border-bottom: 3px solid white;
+    }
+  }
+}
