@@ -1,0 +1,9 @@
+.warehouse {
+  &__list {
+    justify-content: space-between;
+
+    @media #{$Desktop} {
+      max-width: percentage(80.4rem / 108.0rem);
+    }
+  }
+}

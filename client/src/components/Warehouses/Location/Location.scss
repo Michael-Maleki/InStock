@@ -1,0 +1,31 @@
+//Start of Contact flex container
+  .location {
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 4.0rem;
+      justify-content: space-between;
+      @include media-max-width(550, 2, 1);
+      @include media-max-width(1200, 3, 2);
+    }
+
+    &__text {
+      @extend %paragraph-regular;
+    
+      &--bold {
+        @include font-family(AvenirDemiBold);
+      }
+
+      &--padding {
+        padding-bottom: 2.4rem;
+      }
+    }
+
+    &__mail {
+      @extend %paragraph-regular;
+      color: black;
+      word-break: break-all;
+    }
+  }
+//End of Contact flex container
