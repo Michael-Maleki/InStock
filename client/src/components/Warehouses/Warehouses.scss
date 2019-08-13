@@ -1,4 +1,77 @@
 .warehouse {
+  @extend %padding--mobile;
+  @extend %padding--tablet;
+  @extend %padding--desktop;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+
+    @media #{$Tablet} {
+      flex-direction: row;
+    }
+  }
+
+  &__title {
+    @extend %header-section;
+    margin-bottom: 1.6rem;
+    margin-top: 3.2rem;
+
+    @media #{$Tablet} {
+      margin-top: 4.8rem;
+    }
+  }
+
+&__search {
+    @extend %paragraph-regular;
+    @include media-max-width(Mobile, 3.25, 3);
+
+    background: url('../../assets/Icons/SVG/Icon-search.svg'), $text-field-bg-fill;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 16px;
+    
+    color: $paragraph-text;
+    border: 1px solid $field-border;
+    height: 4.9rem; 
+    padding: 16px 0 16px 40px;
+    margin-bottom: 0.8rem;
+    border-radius: 4px;
+
+    &::placeholder {
+      color: $paragraph-text;
+      opacity: 1;
+    }
+
+    &:focus {
+      border: 3px solid $primary-cta;
+    }
+
+    @media #{$Tablet} {
+      width: 190px;
+      margin-left: auto;
+      margin-bottom: 0;
+      height: 4.8rem; 
+    }
+
+    @media #{$Desktop} {
+      width: 252px;
+    }
+  } //End of search bar styling
+
+
+  &__label-container {
+    display: none;
+
+    @media #{$Desktop} {
+      display: flex;
+    }
+  }
+
+  // &__label {
+
+  // }
+
   &__list {
     justify-content: space-between;
 

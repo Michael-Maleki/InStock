@@ -28,18 +28,40 @@ class Warehouses extends React.Component {
     }
   
   render() {
-    console.log(locations)
+
+    // const {isLoaded, error} = this.state
+
+    // if (error) {
+    //   return (
+    //     <>
+    //       <h1 className="loading-error">Error: {error.message}</h1>
+    //       <p className="error-emoji">
+    //         <span role="img" aria-label="cry-face emoji">
+    //           &#128557;
+    //         </span>
+    //       </p>
+    //     </>
+    //   );
+    // } else if (!isLoaded) {
+    //   return (
+    //     <>
+    //       <h1 className="loading-error">Loading...</h1>
+    //       <div className="loader" />
+    //     </>
+    //   );
+    // } else
+
     return(
-      <main>
-        <header>
-          <h1>Locations</h1>
-          <input type='search' placeholder='Search'/>
+      <main className='warehouse'>
+        <header className='warehouse__header'>
+          <h1 className='warehouse__title'>Locations</h1>
+          <input className='warehouse__search' type='search' placeholder='Search'/>
         </header>
         <ul className='warehouse__label-container'>
-          <li className='warehouse__labe'>Warehouse</li>
-          <li className='warehouse__labe'>Contact</li>
-          <li className='warehouse__labe'>Contact Information</li>
-          <li className='warehouse__labe'>Categories</li>
+          <li className='warehouse__label'>Warehouse</li>
+          <li className='warehouse__label'>Contact</li>
+          <li className='warehouse__label'>Contact Information</li>
+          <li className='warehouse__label'>Categories</li>
         </ul>
         <ul className='warehouse__list'>
           {/* <Location /> */

@@ -3,11 +3,23 @@
 
     &__item {
       display: flex;
+      @extend %bottom-divider;
+      padding-top: 2.4rem;
+      padding-bottom: 2.4rem;
+    }
+
+    &__content-flex {
+      display: flex;
       flex-direction: column;
-      padding-bottom: 4.0rem;
+
       justify-content: space-between;
       @include media-max-width(550, 2, 1);
       @include media-max-width(1200, 3, 2);
+    }
+
+    &__arrow {
+      align-self: flex-start;
+      margin-left: auto;
     }
 
     &__text {
@@ -26,6 +38,11 @@
       @extend %paragraph-regular;
       color: black;
       word-break: break-all;
+    }
+
+    &__arrow { 
+
+      width: 15px;
     }
   }
 //End of Contact flex container
