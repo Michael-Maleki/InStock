@@ -1,0 +1,157 @@
+@import "variables.scss";
+@import "mixins.scss";
+@import "fonts.scss";
+
+
+.product-summary-section{
+    @include margin-mobile;
+    font-family: 'Avenir Next Regular';
+    color: $primary-color;
+    @include tablet{
+        @include margin-tablet;
+     }
+
+    
+    &__title{
+        color:$greyshade;
+        font-size:14px;
+        margin-bottom: 16px;
+        
+        
+    }
+
+    &__text{
+        font-size:13px;
+        margin-bottom: 24px;
+       
+    }
+}
+
+
+.Full-Top-section{
+    @include tablet{
+        display:flex;
+        border-bottom: 1px solid $text-label-fill;
+        margin-bottom:40px;
+     }
+}
+
+.Top-section{
+    display:flex;
+    justify-content: flex-start;
+    margin-top: 40px;
+    margin-right: 80px;
+    margin-bottom:25px;
+   
+
+    &__Icon{
+       height: 24px;
+       width: 10%;
+       margin-right:15px;
+       @include tablet{
+          margin-top:10px;
+           
+        
+     }
+    }
+    
+    &__header{
+        font-family: 'Avenir Next Bold';
+        font-size: 24px;
+        width:100%;
+        white-space: nowrap;
+        @include tablet{
+            font-size:35px; 
+            
+         } 
+    }
+
+}
+
+.InStock-button{
+    border-radius: 4px;
+    padding:10px 32px;
+    color:$secondary-color;
+    margin-bottom: 40px;
+    background: #27AE60;
+    font-size:16px;
+    @include tablet{
+        padding:5px 32px;
+        margin-top: 45px;
+     } 
+}
+
+
+#Edit-button{
+    width: 288px;
+    border-radius: 4px;
+    background: #004892;
+    color:$secondary-color;
+    font-size:20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Avenir Next Regular';
+    margin-top:20px;
+    @include tablet{
+        font-size:15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 150px;
+        margin-left: 580px;
+    }
+}
+
+#ordered-reference{
+    @include tablet{
+    display:flex;
+    margin-top:50px;
+    
+    }
+}
+
+#last-ordered-location{
+    @include tablet{
+        display:flex;
+        flex: 1;
+        margin-top:50px;
+        margin-bottom:50px;
+        
+    
+    }
+}
+
+
+.Full-Wrapper{
+    @include tablet{
+    border-bottom: 1px solid $text-label-fill; 
+    margin-bottom: 20px;
+    }
+    
+ 
+ 
+}
+
+.location{
+    
+}
+
+.product-summary{
+    @include tablet{
+    flex:.5;
+    }
+}
+
+.categories{
+   
+}
+
+#last-paragraph{
+    @include tablet{
+      margin-top:5px;
+      color:$primary-color;
+        }
+}
+
+.quantity-item{
+margin-bottom: 50px;
+}

@@ -1,0 +1,47 @@
+@mixin img-size {
+    width:288px;
+    height:162px;
+    
+}
+
+
+@mixin margin-mobile {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+@mixin margin-tablet {
+    margin-left: 24px;
+    margin-right: 24px;
+}   
+
+
+@mixin tablet{
+    @media screen and (min-width: 768px){
+    @content;
+    }
+}
+
+@mixin tablet-h1-size{
+    font-size: 36px;
+    line-height: 44px;
+}
+
+@mixin desktop{
+    @media screen and (min-width: 1440px){
+    @content;
+    }
+}
+
+@mixin desk-container-margin{
+    margin-left: 272px;
+    margin-right: 272px;
+}
+
+
+@mixin margin-desktop-grid{
+    margin-left: 180px;
+    margin-right: 180px;
+}
+
+
