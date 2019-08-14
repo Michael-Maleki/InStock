@@ -7,7 +7,7 @@ const inventory = require('../data/inventory.json')
 const locations = require('../data/locations.json')
 
 router.get('/', (req, res) => {
-    res.send(200).json(locations);
+    res.status(200).json(locations);
 });
 
 router.get('/:warehouseId', (req, res) => {
