@@ -26,9 +26,10 @@ class InventoryList extends React.Component {
 
 
   render() {
-    console.log(this.props.listData[0].name);
-    console.log(this.state.showOption);
-    console.log(this.state.className);
+    if (this.props.listData.message) {
+      return <h1>This Warehouse doesn't contain inventory!</h1>
+    }
+
     return (
       <>
         {this.props.listData.map((item) => {

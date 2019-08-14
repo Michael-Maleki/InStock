@@ -71,9 +71,7 @@ class Warehouses extends React.Component {
         </ul>
         <ul className='warehouse__list'>
           {
-          
-          this.state.locationData.map(location => <Location key={location.id} location={location} handleWarehouseClick={this.props.handleWarehouseClick}/>)
-          
+            this.state.locationData.map(location => <Location key={location.id} location={location} handleWarehouseClick={this.props.handleWarehouseClick}/>)
           }
         </ul>
       </main>

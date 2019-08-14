@@ -11,14 +11,41 @@ class WarehouseView extends React.Component {
       isLoaded: false
     }
 
-    getInventoryList = () => {
-      axios.get(this.props.urlBuilder(`/warehouse/${this.props.match.params.warehouseId}`))
+    displayController = (props) => {
+      
+      
+      if (!this.props.locationData.toString()) {
+        return(<h1>This warehouse does not Exist </h1>)
+      }
+      else return(
+        <>
+      <Header />
+      <section className="inventory">
+        <div className= "inventory__top">
+          <h1 className="inventory--heading">Inventory</h1>
+          <input className='warehouse__search' type='search' placeholder='Search'/>
+        </div>
+        
+        <div className="inventory--categories top-display--categories">
+            <div id="only-item">item</div>
+            <div>last ordered</div>
+            <div>location</div>
+            <div>quantity</div>
+            <div>status</div>
+        </div>
+        <InventoryList listData={this.state.warehouseInventory}/> 
+      </section>
+      </>
+      )
+    }
+
+    getWarehouses = () => {
+      axios.get(this.props.urlBuilder('/warehouse'))
       .then(resp => {
           const {data} = resp
           this.setState({
               isLoaded:true,
-              locationData: this.props.locationData,
-              warehouseInventory: data
+              locationData: data
           })
       }).catch(error => {
         this.setState({
@@ -28,13 +55,33 @@ class WarehouseView extends React.Component {
       })
     }
 
+    getInventoryList = () => {
+      axios.get(this.props.urlBuilder(`/warehouse/${this.props.match.params.warehouseId}`))
+      .then(resp => {
+        if (resp.status === 200) {
+          const {data} = resp
+          this.setState({
+              isLoaded:true,
+              locationData: this.props.locationData,
+              warehouseInventory: data
+          })
+        }
+      }).catch(error => {
+        this.setState({
+          error: error,
+          isLoaded: true
+        })
+        console.log(error)
+      })
+    }
+
     componentDidMount() {
       this.getInventoryList()
     }
   
   render() {
-    console.log(this.state.locationData)
     const {isLoaded, error} = this.state
+    console.log(this.props)
 
     if (error) {
       return (
@@ -58,23 +105,10 @@ class WarehouseView extends React.Component {
 
     return(
       <>
-      <Header />
-      <section className="inventory">
-        <div className= "inventory__top">
-          <h1 className="inventory--heading">Inventory</h1>
-          <input className='warehouse__search' type='search' placeholder='Search'/>
-        </div>
-        
-        <div className="inventory--categories top-display--categories">
-            <div id="only-item">item</div>
-            <div>last ordered</div>
-            <div>location</div>
-            <div>quantity</div>
-            <div>status</div>
-        </div>
-        <InventoryList listData={this.state.warehouseInventory}/> 
-      </section>
-      </>
+      {
+        this.displayController(this.props)
+        }
+        </>
     )
   }
 }
