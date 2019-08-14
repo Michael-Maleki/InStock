@@ -65,19 +65,21 @@
     }
   } //End of search bar styling
 
-
   &__label-container {
     display: none;
+    @extend %paragraph-label;
+    color: grey;
 
     @media #{$Desktop} {
-      display: flex;
+      
     }
   }
 
-  // &__label {
-
-  // }
-
+  &__label {
+    @extend %paragraph-label;
+    color: grey;
+  }
+  
   &__list {
     justify-content: space-between;
 
@@ -87,3 +89,13 @@
     }
   }
 }
+
+  #W0 .warehouse__label-container {
+    display: none;
+    @media #{$Desktop} {
+    padding-bottom: 3.2rem;
+    display: flex;
+    }
+
+  }
+

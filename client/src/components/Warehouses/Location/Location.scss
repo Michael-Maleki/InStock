@@ -73,8 +73,15 @@
     }
 
     &__arrow { 
-
-      width: 15px;
+      height: 18px;
+      width: 11px;
+      margin: 0 2.4rem;
     }
+  }
+
+  #W0 .location__arrow {
+    @media #{$Desktop} {
+      padding-top: 5.4rem;
+    } 
   }
 //End of Contact flex container
