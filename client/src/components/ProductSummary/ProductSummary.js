@@ -17,10 +17,15 @@ class ProductSummary extends React.Component{
                         <button className="InStock-button" type="submit">In Stock</button>
                     </div>
             
-                    <div className="">
-                        <h3 className="product-summary-section__title">ITEM DESCRIPTION</h3>
-                        <p className="product-summary-section__text">Here is a more detailed summary of the product name, it’s uses, industries and possible attributes that could be used to describe the product.</p>
+                    <div>
+                    <div className="main-content"> 
+                    <div className="contents">
+                        <div >
+                            <h3 className="product-summary-section__title">ITEM DESCRIPTION</h3>
+                            <p className="product-summary-section__text">Here is a more detailed summary of the product name, it’s uses, industries and possible attributes that could be used to describe the product.</p>
+                        </div>  
 
+                        <div className="main-content-bottom">
                        <div id="ordered-reference">
 
                            <div class="product-summary">
@@ -51,7 +56,9 @@ class ProductSummary extends React.Component{
                             <p className="product-summary-section__text quantity-item" >12000</p>
                             <h3 className="product-summary-section__title categories">CATEGORIES</h3>
                             <p className="product-summary-section__title categories-text" id="last-paragraph">Industrial, Automotive, Heavy, Mechanical, Engineering, Transportation, Sales</p>
-                        
+                            </div> 
+                        </div>
+                        </div>
                      </div>
                     </div>  
                     <button id="Edit-button" type="submit">EDIT</button>

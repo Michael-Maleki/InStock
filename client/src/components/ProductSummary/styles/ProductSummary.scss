@@ -10,12 +10,18 @@
     @include tablet{
         @include margin-tablet;
      }
+     @include desktop{
+        @include margin-desktop-grid;
+     }
 
     
     &__title{
         color:$greyshade;
         font-size:14px;
         margin-bottom: 16px;
+        @include tablet{
+           
+         }
         
         
     }
@@ -23,6 +29,9 @@
     &__text{
         font-size:13px;
         margin-bottom: 24px;
+        @include desktop{
+            font-size:16px;
+         }
        
     }
 }
@@ -115,8 +124,6 @@
         flex: 1;
         margin-top:50px;
         margin-bottom:50px;
-        
-    
     }
 }
 
@@ -126,14 +133,7 @@
     border-bottom: 1px solid $text-label-fill; 
     margin-bottom: 20px;
     }
-    
- 
- 
-}
-
-.location{
-    
-}
+};
 
 .product-summary{
     @include tablet{
@@ -141,9 +141,6 @@
     }
 }
 
-.categories{
-   
-}
 
 #last-paragraph{
     @include tablet{
@@ -154,4 +151,21 @@
 
 .quantity-item{
 margin-bottom: 50px;
+}
+
+.contents{
+    @include tablet{
+        display: flex;
+        justify-content: space-around;
+    
+    }
+    @include desktop{
+        margin-top: 30px;
+        margin-left:15px;
+   
+    }
+}
+
+.main-content-bottom{
+  margin-top:-50px;
 }
