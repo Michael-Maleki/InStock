@@ -1,0 +1,8 @@
+@import '../../css/Variables.scss';
+
+.plus-box {
+    display: flex;
+    border-radius: 100%;    
+    background-color: $primary-cta-hover;
+    justify-content: center;
+}

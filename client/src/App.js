@@ -5,7 +5,7 @@ import Warehouses from './components/Warehouses/Warehouses.js'
 class App extends React.Component {
 
   urlBuilder(endpoint) {
-    return `http://localhost:5000${endpoint}`
+    return `http://localhost:8080${endpoint}`
   }
 
   render() {
