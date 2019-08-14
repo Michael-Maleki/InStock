@@ -14,10 +14,9 @@ class SwitchToggle extends React.Component {
 
     render() {
         return (
-            <label>
-                <span>In Stock</span>
+            <div>
                 <Switch onChange={this.handleChange} checked={this.state.checked} />
-            </label>
+            </div>
         );
     }
 }
