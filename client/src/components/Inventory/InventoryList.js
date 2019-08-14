@@ -9,8 +9,8 @@ class InventoryList extends React.Component {
     className: 'remove-option-hidden'
   }
 
-  showRemoveOption = () => {
-
+  showRemoveOption = (event) => {
+    console.log(event.target.id)
     if (this.state.showOption === true) {
       this.setState({
         showOption: !this.state.showOption,
@@ -54,12 +54,11 @@ class InventoryList extends React.Component {
                 <div className="inventory__products--details">{(item.isInstock) ? 'In stock' : 'Out of stock'}</div>
               </div>
 
-              <div className="remove">
+              <div id={item.id} className="remove">
                   <img className="remove-btn-image" onClick={this.showRemoveOption} src={removeIcon} alt=""/>
                   <button className={this.state.className}>Remove</button>
               </div>
-            </div>
-            
+            </div>  
           )
         })}
       </>
