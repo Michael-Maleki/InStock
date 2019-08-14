@@ -55,16 +55,16 @@ class ModalPlus extends React.Component {
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <SwitchToggle />
-          <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-          <button onClick={this.closeModal}>close</button>
+          
+          <h2 ref={subtitle => this.subtitle = subtitle}>Create New</h2>
+          
           <div>I am a modal</div>
           <form>
-            <input />
-            <button>tab navigation</button>
-            <button>stays</button>
-            <button>inside</button>
-            <button>the modal</button>
+            <input placeholder='enter text'/>
+            
+            <div><SwitchToggle /></div>
+            <button onClick={this.closeModal}>CANCEL</button>
+            <button>SAVE</button>
           </form>
         </Modal>
       </div>

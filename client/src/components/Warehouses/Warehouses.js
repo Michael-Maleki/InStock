@@ -6,6 +6,7 @@ import ModalPlus from '../Modal/ModalPlus'
 import Modal from 'react-modal';
 import Location from './Location/Location.js'
 import locations from '../../data/locations.json'
+import SwitchToggle from '../Modal/SwitchToggle';
 
 
 
@@ -59,6 +60,7 @@ class Warehouses extends React.Component {
     return (
       <>
         <Header />
+        <ModalPlus />
         <main className='warehouse'>
 
           <header className='warehouse__header'>
