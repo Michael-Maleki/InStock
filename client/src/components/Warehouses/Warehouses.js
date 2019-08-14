@@ -57,12 +57,6 @@ class Warehouses extends React.Component {
           <h1 className='warehouse__title'>Locations</h1>
           <input className='warehouse__search' type='search' placeholder='Search'/>
         </header>
-        <ul className='warehouse__label-container'>
-          <li className='warehouse__label warehouse__label--name'>Warehouse</li>
-          <li className='warehouse__label warehouse__label--contact'>Contact</li>
-          <li className='warehouse__label warehouse__label--contact-info'>Contact Information</li>
-          <li className='warehouse__label warehouse__label--categiories'>Categories</li>
-        </ul>
         <ul className='warehouse__list'>
           {/* <Location /> */
           

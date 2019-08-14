@@ -89,13 +89,3 @@
     }
   }
 }
-
-  #W0 .warehouse__label-container {
-    display: none;
-    @media #{$Desktop} {
-    padding-bottom: 3.2rem;
-    display: flex;
-    }
-
-  }
-

@@ -6,6 +6,15 @@
       @extend %bottom-divider;
       padding-top: 2.4rem;
       padding-bottom: 2.4rem;
+      
+      &:first-child  .warehouse__label-container {
+        display: none;
+       
+        @media #{$Desktop} {
+          padding-bottom: 3.2rem;
+          display: flex;
+        }
+      }
     }
 
     &__content-flex {
@@ -81,7 +90,7 @@
 
   #W0 .location__arrow {
     @media #{$Desktop} {
-      padding-top: 5.4rem;
+      margin-top: 5.4rem;
     } 
   }
 //End of Contact flex container
