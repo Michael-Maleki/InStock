@@ -15,13 +15,13 @@ class Inventory extends React.Component {
   render() {
     console.log(this.state.data[0].name);
     return (
-      <>
+      <section className="inventory">
         <h1 className="inventory--heading">Inventory</h1>
         <div className="search-box">
             <img className="search-box__icon" src={searchIcon} alt="" />
-            <input className="search-box__input"/>
+            <input className="search-box__input" type="name" placeholder="Search" />
         </div>
-        <div className="inventory--categories">
+        <div className="inventory--categories top-display--categories">
             <div>item</div>
             <div>last ordered</div>
             <div>location</div>
@@ -29,7 +29,7 @@ class Inventory extends React.Component {
             <div>status</div>
         </div>
         <InventoryList listData = {this.state.data}/> 
-      </>
+      </section>
     )
   }
 }

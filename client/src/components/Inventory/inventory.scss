@@ -1,0 +1,85 @@
+* {
+  @include font-family('AvenirRegular');
+}
+
+.top-display--categories {
+  display: none;
+}
+
+
+.inventory {
+
+  &--heading {
+    @extend %header-section;
+    @extend %margin--wrapper;
+    padding: 2rem 0 1rem 0;
+  }
+  
+  &--categories {
+    //@extend %margin--wrapper;
+    //@extend %padding--mobile;
+    @include font-family('AvenirRegular');
+    @extend %paragraph-label;
+    color: $text-label-fill;
+    text-transform: uppercase;
+  }
+
+  &__items {
+    @extend %bottom-divider;
+    @extend %margin--wrapper;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    height: 40rem;
+    padding: 2rem 0;
+  }
+
+  &__first-item {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    height: 10rem;
+
+  }
+
+  &__products--details {
+    //@extend %margin--wrapper;
+    @extend %paragraph-regular;
+  }
+
+  .product-name {
+    @extend %paragraph-label;
+
+  }
+
+  .product-description {
+    font-size: 1.2rem;
+
+  }
+}
+
+
+.search-box {
+  &__icon {
+    width: 5%;
+    position: absolute;
+    top: 13.4rem;
+    left: 2.4rem;
+  }
+
+  &__input {
+    @extend %margin--wrapper;
+    @extend %paragraph-regular;
+    height: 5rem;
+    width: 82%;
+    border-radius: 4px;
+    border: 1px solid #efefef;
+    outline: none;
+    padding-left: 3rem;
+  }
+
+  &__input::placeholder {
+    color: black;
+  }
+}
+

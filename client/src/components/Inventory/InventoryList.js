@@ -11,20 +11,27 @@ class InventoryList extends React.Component {
       <>
         {this.props.listData.map((item) => {
           return(
-            <div>
-              <div>item</div>
-              <div>{item.name}</div>
-              <div>last ordered</div>
-              <div>{item.lastOrdered}</div>
-              <div>location</div>
-              <div>{item.location}</div>
-              <div>quantity</div>
-              <div>{item.quantity}</div>
-              <div>status</div>
-              <div>{(item.isInstock) ? 'In stock' : 'Out of stock'}</div>
+            <div key={item.id} className="inventory__items">
+
+              <div className="inventory__first-item">
+                <div className="inventory--categories">item</div>
+                <div className="inventory__products--details product-name">{item.name}</div>
+                <div className="inventory__products--details product-description">{item.description}</div>
+              </div>
+
+              <div className="inventory--categories">last ordered</div>
+              <div className="inventory__products--details">{item.lastOrdered}</div>
+
+              <div className="inventory--categories">location</div>
+              <div className="inventory__products--details">{item.location}</div>
+
+              <div className="inventory--categories">quantity</div>
+              <div className="inventory__products--details">{item.quantity}</div>
+
+              <div className="inventory--categories">status</div>
+              <div className="inventory__products--details">{(item.isInstock) ? 'In stock' : 'Out of stock'}</div>
             </div>
           )
-          
         })}
       </>
     )
