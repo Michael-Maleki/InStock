@@ -12,9 +12,8 @@ router.get('/', (req, res) => {
 
 router.get('/warehouse/:warehouseId', (req, res) => {
   
-  let locationInventory = inventory.filter(inventory => inventory.warehouseId === req.params.warehouseId)
-  
-  (!locationInventory) ? res.send(404).json({message: 'Invalid Warehouse ID'}) : res.send(200).json(locationInventory)
+  let locationInventory = inventory.filter(inventory => { return inventory.warehouseId === req.params.warehouseId})
+  return (!locationInventory.toString()) ? res.status(404).json({'message': 'Invalid Warehouse ID'}) : res.status(200).json(locationInventory)
 
 })
 
