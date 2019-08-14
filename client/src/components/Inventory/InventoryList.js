@@ -11,7 +11,7 @@ class InventoryList extends React.Component {
       <>
         {this.props.listData.map((item) => {
           return(
-            <div key={item.id} className="inventory__items">
+            <div key={item.id} id={item.id} className="inventory__items">
 
               <div className="inventory__first-item">
                 <div className="inventory--categories">item</div>

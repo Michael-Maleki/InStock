@@ -2,17 +2,24 @@
   @include font-family('AvenirRegular');
 }
 
-.top-display--categories {
-  display: none;
-}
-
 
 .inventory {
+
+  &__top {
+    @media screen and (min-width: 550px) {
+      display: flex;
+      justify-content: space-between; 
+      padding: 2rem 0 1rem 0;
+    }
+  }
 
   &--heading {
     @extend %header-section;
     @extend %margin--wrapper;
     padding: 2rem 0 1rem 0;
+    @media screen and (min-width: 550px) { 
+      padding: 0;
+    }
   }
   
   &--categories {
@@ -22,7 +29,36 @@
     @extend %paragraph-label;
     color: $text-label-fill;
     text-transform: uppercase;
+    @media screen and (min-width: 550px) {
+      display: none;
+    }
   }
+
+  .top-display--categories {
+    display: none;
+    @extend %margin--wrapper;
+
+    @media screen and (min-width: 550px) {  
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  #only-item {
+    @media screen and (min-width: 550px) {  
+      width: 17rem;
+    }
+  }
+
+  .top-display--categories > div {
+    padding: 2rem 0 0 0;
+    @media screen and (min-width: 550px) {  
+      width: 8rem;
+
+    }
+  }
+
 
   &__items {
     @extend %bottom-divider;
@@ -32,6 +68,12 @@
     justify-content: space-between;
     height: 40rem;
     padding: 2rem 0;
+
+    @media screen and (min-width: 550px) {
+      flex-direction: row;
+      align-items: center;
+      height: 12rem;
+    }
   }
 
   &__first-item {
@@ -40,31 +82,62 @@
     justify-content: space-evenly;
     height: 10rem;
 
+    @media screen and (min-width: 550px) {
+      flex-flow: column nowrap;
+    }
+
   }
 
   &__products--details {
     //@extend %margin--wrapper;
     @extend %paragraph-regular;
+    @media screen and (min-width: 550px) {
+      width: 8rem;
+    }
   }
 
   .product-name {
     @extend %paragraph-label;
+    font-size: 1.5rem;
+    @media screen and (min-width: 550px) {
+      width: 17rem;
+    }
 
   }
 
   .product-description {
     font-size: 1.2rem;
+    @media screen and (min-width: 550px) {
+      width: 17rem;
+    }
 
   }
 }
 
 
 .search-box {
+
+  @media screen and (min-width: 550px) {
+    width: 40%;
+  }
+
+  @media screen and (min-width: 1200px) {
+    width: 35%;
+  }
+
   &__icon {
-    width: 5%;
+    width: 2.2rem;
     position: absolute;
     top: 13.4rem;
     left: 2.4rem;
+    @media screen and (min-width: 550px) {
+      left: 48rem;
+      top: 9rem;
+    }
+    @media screen and (min-width: 550px) {
+      left: 94.5rem;
+    }
+    
   }
 
   &__input {
@@ -76,6 +149,14 @@
     border: 1px solid #efefef;
     outline: none;
     padding-left: 3rem;
+
+
+    @media screen and (min-width: 1200px) {
+      margin: 0;
+      width: 60%;
+    }
+
+    
   }
 
   &__input::placeholder {
