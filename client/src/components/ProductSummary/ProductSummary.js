@@ -20,9 +20,9 @@ class ProductSummary extends React.Component{
                     <div>
                     <div className="main-content"> 
                     <div className="contents">
-                        <div >
+                        <div  class="description-style">
                             <h3 className="product-summary-section__title">ITEM DESCRIPTION</h3>
-                            <p className="product-summary-section__text">Here is a more detailed summary of the product name, it’s uses, industries and possible attributes that could be used to describe the product.</p>
+                            <p className="product-summary-section__text description-text">Here is a more detailed summary of the product name, it’s uses, industries and possible attributes that could be used to describe the product.</p>
                         </div>  
 
                         <div className="main-content-bottom">
@@ -51,12 +51,14 @@ class ProductSummary extends React.Component{
                                 <h3 className="product-summary-section__title location">LOCATION</h3>
                                 <p className="product-summary-section__text location">Toronto, CAN</p>
                             </div>
+
                             </div>
                             <h3 className="product-summary-section__title quantity">QUANTITY</h3>
                             <p className="product-summary-section__text quantity-item" >12000</p>
                             <h3 className="product-summary-section__title categories">CATEGORIES</h3>
                             <p className="product-summary-section__title categories-text" id="last-paragraph">Industrial, Automotive, Heavy, Mechanical, Engineering, Transportation, Sales</p>
                             </div> 
+
                         </div>
                         </div>
                      </div>
