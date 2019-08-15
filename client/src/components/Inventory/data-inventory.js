@@ -1,4 +1,4 @@
-[
+const dataInventory = [
   {
     "id": "I0",
     "name": "Scotch Tape",
@@ -88,3 +88,5 @@
     "warehouseId": "W2"
   }
 ]
+
+export default dataInventory;

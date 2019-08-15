@@ -10,7 +10,12 @@
 //Imports the styles for the Error/Loading page
 @import './ErrorLoading.scss';
 
+@import '../components/Warehouses/Location/Location.scss';
+@import '../components/Warehouses/Warehouses.scss';
+
 // Imports the header styles from header component
 @import '../components/Header/header.scss';
-
-@import '../components/ProductSummary/styles/ProductSummary.scss'
+// Imported productSummary component's styles
+@import '../components/ProductSummary/styles/ProductSummary.scss';
+// Imports the inventory styles from inventory component
+@import '../components/Inventory/inventory.scss';
