@@ -26,9 +26,9 @@ class InventoryList extends React.Component {
 
 
   render() {
-    console.log(this.props.listData[0].name);
-    console.log(this.state.showOption);
-    console.log(this.state.className);
+    // console.log(this.props.listData[0].name);
+    // console.log(this.state.showOption);
+    // console.log(this.state.className);
     return (
       <>
         {this.props.listData.map((item) => {

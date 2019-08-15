@@ -4,7 +4,7 @@ import axios from 'axios';
 import InventoryList from './InventoryList';
 import Header from '../Header/Header.js';
 import ModalPlus from '../Modal/ModalPlus';
-import Modal from 'react-modal';
+// import Modal from 'react-modal';
 class Inventory extends React.Component {
 
   state = {
