@@ -1,0 +1,96 @@
+//Start of Contact flex container
+  .location {
+
+    &__item {
+      display: flex;
+      @extend %bottom-divider;
+      padding-top: 2.4rem;
+      padding-bottom: 2.4rem;
+      
+      &:first-child  .warehouse__label-container {
+        display: none;
+       
+        @media #{$Desktop} {
+          padding-bottom: 3.2rem;
+          display: flex;
+        }
+      }
+    }
+
+    &__content-flex {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+
+      @media #{$Desktop} {
+        flex-direction: row;
+      }
+    }
+
+    &__top-flex {
+      flex: 0.25;
+      // @media #{$Desktop} {
+      //   flex: 1;
+      // }
+    }
+    &__bottom-flex {
+      @media #{$Tablet} {
+        display: flex;
+        justify-content: space-between;
+      }
+      @media #{$Desktop} {
+        flex: 1;
+      }
+    }
+
+    &__text-container {
+      flex: 1;
+    }
+
+    &__text-container--name {
+      flex: 0.75;
+      // @media #{$Desktop} {
+      //   flex: 1;
+      // }
+    }
+
+    &__arrow {
+      align-self: flex-start;
+      margin-left: auto;
+    }
+
+    &__text {
+      @extend %paragraph-regular;
+    
+      &--bold {
+        @include font-family(AvenirDemiBold);
+      }
+
+      &--padding {
+        padding-bottom: 2.4rem;
+
+        @media #{$Desktop} {
+          padding-bottom: 0;
+        }
+      }
+    }
+
+    &__mail {
+      @extend %paragraph-regular;
+      color: black;
+      word-break: break-all;
+    }
+
+    &__arrow { 
+      height: 18px;
+      width: 11px;
+      margin: 0 2.4rem;
+    }
+  }
+
+  #W0 .location__arrow {
+    @media #{$Desktop} {
+      margin-top: 5.4rem;
+    } 
+  }
+//End of Contact flex container

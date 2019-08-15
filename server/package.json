@@ -1,0 +1,19 @@
+{
+  "name": "sprint3",
+  "version": "1.0.0",
+  "description": "BrainFlix sprint3 API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Dale Shlass",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "form-data": "^2.5.0",
+    "nanoid": "^2.0.3",
+    "uuid": "^3.3.2"
+  }
+}
