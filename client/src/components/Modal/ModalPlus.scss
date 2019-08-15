@@ -102,96 +102,97 @@
     font-weight: 200px;
     color: #323232;
     margin-bottom: 32px;
+  }
 
-    &__row1 {
+  &__row1 {
+    display: flex;
+    flex-direction: column;
+    // flex: 1 0 auto;
+    // flex-wrap: wrap;
+    margin-bottom: 24px;
+    justify-content: space-between;
+    width: 100%;
+
+    &__product {
       display: flex;
       flex-direction: column;
-      // flex: 1 0 auto;
-      // flex-wrap: wrap;
       margin-bottom: 24px;
-      justify-content: space-between;
-      width: 100%;
+      // width: 220px;
+      // margin-right: 40px;
 
-      &__product {
+      &__last-ordered {
         display: flex;
         flex-direction: column;
-        margin-bottom: 24px;
         // width: 220px;
         // margin-right: 40px;
-
-        &__last-ordered {
-          display: flex;
-          flex-direction: column;
-          // width: 220px;
-          // margin-right: 40px;
-        }
-      }
-
-      &__row2 {
-        display: flex;
-        flex-direction: column;
-        // flex: 1 0 auto;
-        // flex-wrap: wrap;
-        margin-bottom: 24px;
-        justify-content: space-between;
-        width: 100%;
-
-        &__city {
-          display: flex;
-          flex-direction: column;
-          margin-bottom: 24px;
-          // width: 220px;
-          // margin-right: 40px;
-        }
-
-        &__country {
-          display: flex;
-          flex-direction: column;
-          // width: 220px;
-          // margin-right: 40px;
-        }
-      }
-
-      &__row3 {
-        display: flex;
-        flex-direction: column;
-        // flex: 1 0 auto;
-        // flex-wrap: wrap;
-        margin-bottom: 24px;
-        justify-content: space-between;
-        width: 100%;
-
-        &__quantity {
-          display: flex;
-          flex-direction: column;
-          // width: 220px;
-          // margin-right: 40px;
-        }
-
-        &__switch {
-          display: flex;
-          flex-direction: column;
-          // width: 220px;
-          // margin-right: 40px;
-        }
-
-        &__switch-stock {
-          display: flex;
-          flex-direction: row;
-          align-items: center;
-          height: 48px;
-          width: 100%;
-          justify-content: space-between;
-          padding-right: 3rem;
-        }
-      }
-
-      &__row4 {
-        display: flex;
-        flex-direction: column;
-        widows: 100%;
       }
     }
+  }
+
+  &__row2 {
+    display: flex;
+    flex-direction: column;
+    // flex: 1 0 auto;
+    // flex-wrap: wrap;
+    margin-bottom: 24px;
+    justify-content: space-between;
+    width: 100%;
+
+    &__city {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 24px;
+      // width: 220px;
+      // margin-right: 40px;
+    }
+
+    &__country {
+      display: flex;
+      flex-direction: column;
+      // width: 220px;
+      // margin-right: 40px;
+    }
+  }
+
+  &__row3 {
+    display: flex;
+    flex-direction: column;
+    // flex: 1 0 auto;
+    // flex-wrap: wrap;
+    margin-bottom: 24px;
+    justify-content: space-between;
+    width: 100%;
+
+    &__quantity {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 24px;
+      // width: 220px;
+      // margin-right: 40px;
+    }
+
+    &__switch {
+      display: flex;
+      flex-direction: column;
+      // width: 220px;
+      // margin-right: 40px;
+    }
+
+    &__switch-stock {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      height: 48px;
+      width: 100%;
+      justify-content: space-between;
+      padding-right: 3rem;
+    }
+  }
+
+  &__row4 {
+    display: flex;
+    flex-direction: column;
+    widows: 100%;
   }
 }
 
@@ -202,6 +203,12 @@
 ////-------------------------------------------------------------
 
 @media #{$Tablet} {
+
+.ReactModal__Content {
+  width: 90vw;
+  height: 750px;
+}
+
   .modal-button {
     position: fixed;
     right: 5rem;
@@ -229,14 +236,15 @@
     @include font-family(AvenirRegular);
     font-size: 14px;
     color: black;
-    margin-right: 100px;
+    margin-right: 75px;
+    width: 200px;;
   }
 
   .modal-input {
     @include font-family(AvenirRegular);
     @include font-line(1.3rem, 1.8rem);
     @include media-font(550px, 1.4rem, 2.2rem);
-    width: 220px;
+    width: 80%;
     border: solid 1px rgba($color: #000000, $alpha: 0.2);
     background-color: rgba($color: #000000, $alpha: 0.01);
     border-radius: 4px;
@@ -256,13 +264,15 @@
     height: 80px;
     padding-left: 1rem;
     font-size: 14px;
-    width: 100%;
+    width: 90%;
   }
 
   .modal-buttons {
     display: flex;
+    flex-direction: row;
     justify-content: flex-end;
     margin-top: 40px;
+    width: 90%; 
   }
 
   .modal-save {
@@ -294,6 +304,7 @@
     height: 624px;
     width: 80vw;
     padding: 32px 0 0 0;
+    margin: 0 auto;
 
     &__title {
       @include font-family(AvenirBold);
@@ -302,79 +313,69 @@
       font-weight: 200px;
       color: #323232;
       margin-bottom: 48px;
+      width: 80%;
     }
 
     &__row1 {
       display: flex;
       flex-direction: row;
-      flex: 1 0 auto;
-      // flex-wrap: wrap;
       margin-bottom: 24px;
-      justify-content: space-between;
       width: 100%;
 
       &__product {
         display: flex;
         flex-direction: column;
         flex: 1 0 auto;
-        width: auto;
-        margin-right: 40px;
+        width: 50%;
       }
 
       &__last-ordered {
         display: flex;
         flex-direction: column;
         flex: 1 0 auto;
-        width: auto;
-        // margin-right: 40px;
+        width: 50%;
       }
     }
 
     &__row2 {
       display: flex;
       flex-direction: row;
-      // flex: 1 0 auto;
-      // flex-wrap: wrap;
       margin-bottom: 24px;
-      justify-content: space-between;
       width: 100%;
 
       &__city {
         display: flex;
         flex-direction: column;
-        // width: 220px;
-        // margin-right: 40px;
+        flex: 1 0 auto;
+        width: 50%;
       }
 
       &__country {
         display: flex;
         flex-direction: column;
-        // width: 220px;
-        // margin-right: 40px;
+        flex: 1 0 auto;
+        width: 50%;
       }
     }
 
     &__row3 {
       display: flex;
       flex-direction: row;
-      // flex: 1 0 auto;
-      // flex-wrap: wrap;
       margin-bottom: 24px;
-      justify-content: space-between;
       width: 100%;
 
       &__quantity {
         display: flex;
         flex-direction: column;
-        // width: 220px;
-        // margin-right: 40px;
+        flex: 1 0 auto;
+        width: 50%;
       }
 
       &__switch {
         display: flex;
         flex-direction: column;
-        // width: 220px;
-        // margin-right: 40px;
+        flex: 1 0 auto;
+        width: 50%;
       }
 
       &__switch-stock {
@@ -402,6 +403,12 @@
 ////-----------------------------------------------------------------------------
 
 @media #{$Desktop} {
+
+  .ReactModal__Content {
+    width: 50vw;
+    height: 750px;
+  }
+
   .modal-button {
     position: fixed;
     right: 5rem;

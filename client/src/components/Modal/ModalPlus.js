@@ -69,13 +69,13 @@ uploadToServer = (event) => {
       
       
   });
-  console.log(event.target.productInput.value);
-  console.log(event.target.orderedInput.value);
-  console.log(event.target.cityInput.value);
-  console.log(event.target.countryInput.value);
-  console.log(event.target.quantityInput.value);
-  console.log(event.target.instockInput.checked);
-  console.log(event.target.descriptionInput.value);
+  // console.log(event.target.productInput.value);
+  // console.log(event.target.orderedInput.value);
+  // console.log(event.target.cityInput.value);
+  // console.log(event.target.countryInput.value);
+  // console.log(event.target.quantityInput.value);
+  // console.log(event.target.instockInput.checked);
+  // console.log(event.target.descriptionInput.value);
 }
 
   render() {
