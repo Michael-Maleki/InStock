@@ -33,15 +33,9 @@ class Location extends React.Component {
             </span>
           </div>
         </div>
-<<<<<<< HEAD
-        {/* <Link to='/'> */}
-        <img className='location__arrow' src={rightArrow} alt='right-arrow' />
-        {/* </Link> */}
-=======
         <Link to={`/warehouse/${id}`}>
           <img className='location__arrow'src={rightArrow} alt='right-arrow'/>
         </Link>
->>>>>>> 7e9943240110a782c625dcb203595cc834cfb2ca
       </li>
 
     </>

@@ -45,15 +45,9 @@ class InventoryList extends React.Component {
 
 
   render() {
-<<<<<<< HEAD
-    // console.log(this.props.listData[0].name);
-    // console.log(this.state.showOption);
-    // console.log(this.state.className);
-=======
 
     //console.log(this.state.showOption);
 
->>>>>>> 7e9943240110a782c625dcb203595cc834cfb2ca
     return (
       <form onClick={this.handleClicksOutside}>
         {this.props.listData.map((item) => {
