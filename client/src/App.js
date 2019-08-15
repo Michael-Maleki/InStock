@@ -21,7 +21,6 @@ class App extends React.Component {
   render() {
     return (
       <>
-        
       <Router>
         <Switch>
           <Route path='/warehouse/:warehouseId' render={(props) => <WarehouseView match={props.match} urlBuilder={this.urlBuilder}/>}/>

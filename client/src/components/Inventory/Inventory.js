@@ -10,6 +10,10 @@ class Inventory extends React.Component {
     isLoaded: false
   }
 
+  deleteInventoryItem = () => {
+    
+  }
+
   getInventory = () => {
       axios.get(this.props.urlBuilder('/inventory'))
       .then(resp => {
