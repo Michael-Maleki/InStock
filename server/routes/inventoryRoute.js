@@ -10,7 +10,7 @@ router.get('/', (req, res) => {
 });
 
 router.get('/:inventoryId', (req,res) => {
-  
+
 	let inventoryItem = inventory.filter(inventory => { return inventory.id === req.params.inventoryId})
   return (!inventoryItem.toString()) ? res.status(404).json({'message': 'Item does not exist'}) : res.status(200).json(inventoryItem)
 
