@@ -5,23 +5,25 @@ import Backarrow from '../../assets/Icons/SVG/Icon-back-arrow.svg';
 class ProductSummary extends React.Component{
    
    state= {
-        isLoaded: false,
+				isLoaded: false,
+				inventorydata: {}
       }
       
       componentDidMount() {
-        axios.get(`http://localhost:8080/inventory/${this.props.match.inventoryId}`)
+        axios.get(`http://localhost:8080/inventory/${this.props.match.params.inventoryId}`)
         .then(response => {
             
             this.setState({
                 isLoaded:true,
                 inventorydata: response.data
-            })
+						})
+						console.log(response.data)
         }).catch(error => console.log(error))
     }
     
     render() {
   
-      const {inventorydata} = this.state
+      // const {inventorydata} = this.state
   
       if (this.state.isLoaded === false) {
         return (
