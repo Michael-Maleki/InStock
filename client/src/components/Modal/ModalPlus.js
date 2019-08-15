@@ -98,18 +98,22 @@ class ModalPlus extends React.Component {
                 </div>
 
                 <div className='modal__row3__switch'>
-                  <div className='modal-label'>In Stock</div>
-                  <div className='toggle'><SwitchToggle /></div>
+                  <div className='modal-label'>STATUS</div>
+                  <div className='modal__row3__switch-stock'>
+                    <div className='modal-stock-label'>In Stock</div>
+                    <div className='toggle'><SwitchToggle /></div>
+                  </div>
                 </div>
               </div>
 
-              <div className='modal__row4__item-desc'>
-                  <div className='modal-label'>ITEM DESCRIPTION</div>
-                  <input className='modal-input' placeholder='(Optional)' />
-                </div>
-
-              <button className='modal-cancel' onClick={this.closeModal}>CANCEL</button>
-              <button className='modal-save'>SAVE</button>
+              <div className='modal__row4'>
+                <div className='modal-label'>ITEM DESCRIPTION</div>
+                <input className='modal-desc-input' placeholder='(Optional)' />
+              </div>
+              <div className='modal-buttons'>
+                <button className='modal-cancel' onClick={this.closeModal}>CANCEL</button>
+                <button className='modal-save'>SAVE</button>
+              </div>
             </form>
           </div>
         </Modal>
