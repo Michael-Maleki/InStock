@@ -115,7 +115,6 @@ class WarehouseView extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { isLoaded } = this.state;
     if (!isLoaded) {
       return (

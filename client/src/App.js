@@ -14,19 +14,15 @@ class App extends React.Component {
     return `http://localhost:8080${endpoint}`
   }
 
-  handleSelection= (data) => {
-      this.setState({selectedData: data})
-  }
-
   render() {
     return (
       <Router>
         <Switch>
-          <Route path='/warehouse/:warehouseId' render={(props) => <WarehouseView match={props.match} urlBuilder={this.urlBuilder} locationData={this.state.selectedData}/>}/>
-          <Route path='/warehouse' render={(props) => <Warehouses match={props.match} urlBuilder={this.urlBuilder} handleWarehouseClick={this.handleSelection}/>}/>
-          <Route path='/inventory/:inventoryId' render={(props) => <Warehouses match={props.match} urlBuilder={this.urlBuilder} locationData={this.state.selectedData}/>}/>
-          <Route path='/inventory' render={(props) => <Inventory match={props.match} urlBuilder={this.urlBuilder} handleInventoryClick={this.handleSelection} />}/>
-          <Route path='/' render={(props) => <Warehouses match={props.match} urlBuilder={this.urlBuilder} handleWarehouseClick={this.handleSelection}/>}/>
+          <Route path='/warehouse/:warehouseId' render={(props) => <WarehouseView match={props.match} urlBuilder={this.urlBuilder}/>}/>
+          <Route path='/warehouse' render={(props) => <Warehouses match={props.match} urlBuilder={this.urlBuilder}/>}/>
+          <Route path='/inventory/:inventoryId' render={(props) => <Warehouses match={props.match} urlBuilder={this.urlBuilder}/>}/>
+          <Route path='/inventory' render={(props) => <Inventory match={props.match} urlBuilder={this.urlBuilder}/>}/>
+          <Route path='/' render={(props) => <Warehouses match={props.match} urlBuilder={this.urlBuilder}/>}/>
         </Switch>
       </Router>
     );

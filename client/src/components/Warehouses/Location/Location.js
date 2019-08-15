@@ -32,7 +32,7 @@ class Location extends React.Component {
             </span>
           </div>
         </div>
-        <Link to={`/warehouse/${id}`} onClick={() => this.props.handleWarehouseClick(this.props.location)}>
+        <Link to={`/warehouse/${id}`}>
           <img className='location__arrow'src={rightArrow} alt='right-arrow'/>
         </Link>
       </li>
