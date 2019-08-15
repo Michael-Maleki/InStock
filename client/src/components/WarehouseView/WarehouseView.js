@@ -25,7 +25,6 @@ class WarehouseView extends React.Component {
                 placeholder="Search"
               />
             </div>
-
             <div className="inventory--categories top-display--categories">
               <div id="only-item">item</div>
               <div>last ordered</div>
@@ -40,24 +39,35 @@ class WarehouseView extends React.Component {
     } else
       return (
         <>
-          <section className="inventory">
-            <div className="inventory__top">
-              <h1 className="inventory--heading">Inventory</h1>
-              <input
-                className="warehouse__search"
-                type="search"
-                placeholder="Search"
-              />
+          <section className="warehouse-view">
+            <div className="warehouse-view__top">
+              <h1 className="warehouse-view--heading">{state.locationData.name}</h1>
+            <div className='warehouse-view__info-wrapper'>
+              <span className='warehouse-view__contact'>
+                <p className="warehouse-view__label">Address</p>
+                <p className=''>{state.locationData.address.street}</p>
+                <p className='warehouse-view__margin-bottom'>{state.locationData.address.suiteNum}</p>
+                <p className=''>{state.locationData.address.city}</p>
+                <p className='warehouse-view__margin-bottom'>{state.locationData.address.postal}</p>
+              </span>
+              <span className='warehouse-view__contact'>
+                <p className="warehouse-view__label">Contact</p>
+                <p className=''>{state.locationData.contact.name}</p>
+                <p className='warehouse-view__margin-bottom'>{state.locationData.contact.title}</p>
+                <p className=''>{state.locationData.contact.phone}</p>
+                <p className='warehouse-view__margin-bottom'>{state.locationData.contact.email}</p>
+              </span>
+              </div>
             </div>
 
-            <div className="inventory--categories top-display--categories">
+            <div className="warehouse-view--categories top-display--categories">
               <div id="only-item">item</div>
               <div>last ordered</div>
               <div>location</div>
               <div>quantity</div>
               <div>status</div>
             </div>
-            <InventoryList listData={this.state.warehouseInventory} />
+            <InventoryList listData={state.warehouseInventory}/>
           </section>
         </>
       );
