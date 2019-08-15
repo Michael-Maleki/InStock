@@ -1,7 +1,7 @@
 import React from 'react';
 import rightArrow from '../../../assets/Icons/SVG/Icon-arrow-right.svg';
 // import axios from 'axios';
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 
 class Location extends React.Component {
   render() {
@@ -33,9 +33,15 @@ class Location extends React.Component {
             </span>
           </div>
         </div>
+<<<<<<< HEAD
         {/* <Link to='/'> */}
         <img className='location__arrow' src={rightArrow} alt='right-arrow' />
         {/* </Link> */}
+=======
+        <Link to={`/warehouse/${id}`}>
+          <img className='location__arrow'src={rightArrow} alt='right-arrow'/>
+        </Link>
+>>>>>>> 7e9943240110a782c625dcb203595cc834cfb2ca
       </li>
 
     </>

@@ -1,38 +1,64 @@
 import React from 'react';
 import removeIcon from '../../assets/Icons/SVG/Icon-kebab-default.svg'
+import  { Link } from 'react-router-dom'
 
 
 class InventoryList extends React.Component {
 
   state = {
-    showOption: false,
-    className: 'remove-option-hidden'
+    showOption: false
   }
 
-  showRemoveOption = (event) => {
-    console.log(event.target.id)
+
+  /******** the function to hide remove option by clicking anywhere ******/
+  handleClicksOutside = (event) => {
+    //console.dir(event.currentTarget.elements[0].className);
+    const outsideClick = event.currentTarget.elements; 
+    
     if (this.state.showOption === true) {
+      for (let i = 0; i < outsideClick.length; i++) {
+        outsideClick[i].className = 'remove-option-hidden'
+      }
       this.setState({
-        showOption: !this.state.showOption,
-        className: 'remove-option-hidden'
+        showOption: false
       })
-    } else {
+    }
+    
+  }
+
+/********* The function to pop the remove button when kebab icon is clicked *********/
+  showRemoveOption = (event) => {
+    if (this.state.showOption === true) {
+      event.target.nextSibling.className = 'remove-option-hidden';
       this.setState({
-        showOption: !this.state.showOption,
-        className: 'remove-option-displayed'
+        showOption: !this.state.showOption
+      })
+
+    } else {
+      //console.log(event.target.nextSibling.className);
+      event.target.nextSibling.className = 'remove-option-displayed';
+      this.setState({
+        showOption: !this.state.showOption
       })
     }
   }
 
 
   render() {
+<<<<<<< HEAD
     // console.log(this.props.listData[0].name);
     // console.log(this.state.showOption);
     // console.log(this.state.className);
+=======
+
+    //console.log(this.state.showOption);
+
+>>>>>>> 7e9943240110a782c625dcb203595cc834cfb2ca
     return (
-      <>
+      <form onClick={this.handleClicksOutside}>
         {this.props.listData.map((item) => {
           return(
+            <Link to={`/inventory/${item.id}`}> 
             <div key={item.id} id={item.id} className="inventory__items">
               <div className="inventory__content">
                 <div className="inventory__first-item">
@@ -54,14 +80,15 @@ class InventoryList extends React.Component {
                 <div className="inventory__products--details">{(item.isInstock) ? 'In stock' : 'Out of stock'}</div>
               </div>
 
-              <div id={item.id} className="remove">
+              <div className="remove">
                   <img className="remove-btn-image" onClick={this.showRemoveOption} src={removeIcon} alt=""/>
-                  <button className={this.state.className}>Remove</button>
+                  <button className='remove-option-hidden' type="submit" onClick={this.deleteItem}>Remove</button>
               </div>
             </div>  
+            </Link>
           )
         })}
-      </>
+      </form>
     )
   }
 }
