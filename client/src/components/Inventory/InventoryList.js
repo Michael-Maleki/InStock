@@ -4,21 +4,35 @@ import removeIcon from '../../assets/Icons/SVG/Icon-kebab-default.svg'
 
 class InventoryList extends React.Component {
 
-
   state = {
     showOption: false
   }
 
+  handleClicksOutside = (event) => {
+    //console.dir(event.currentTarget.elements[0].className);
+    const outsideClick = event.currentTarget.elements; 
+    
+    if (this.state.showOption === true) {
+      for (let i = 0; i < outsideClick.length; i++) {
+        outsideClick[i].className = 'remove-option-hidden'
+      }
+      this.setState({
+        showOption: false
+      })
+    }
+    
+  }
+
   showRemoveOption = (event) => {
     if (this.state.showOption === true) {
-      event.target.nextSibling.className = 'remove-option-hidden'
+      event.target.nextSibling.className = 'remove-option-hidden';
       this.setState({
         showOption: !this.state.showOption
       })
 
     } else {
       //console.log(event.target.nextSibling.className);
-      event.target.nextSibling.className = 'remove-option-displayed'
+      event.target.nextSibling.className = 'remove-option-displayed';
       this.setState({
         showOption: !this.state.showOption
       })
@@ -28,10 +42,10 @@ class InventoryList extends React.Component {
 
   render() {
 
-    console.log(this.state.showOption);
-    
+    //console.log(this.state.showOption);
+
     return (
-      <form>
+      <form onClick={this.handleClicksOutside}>
         {this.props.listData.map((item) => {
           return(
             <div key={item.id} id={item.id} className="inventory__items">
@@ -56,7 +70,7 @@ class InventoryList extends React.Component {
               </div>
 
               <div className="remove">
-                  <img id={item.id} className="remove-btn-image" onClick={this.showRemoveOption} src={removeIcon} alt=""/>
+                  <img className="remove-btn-image" onClick={this.showRemoveOption} src={removeIcon} alt=""/>
                   <button className='remove-option-hidden' type="submit">Remove</button>
               </div>
             </div>  
