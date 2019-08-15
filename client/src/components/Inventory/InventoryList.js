@@ -1,5 +1,6 @@
 import React from 'react';
 import removeIcon from '../../assets/Icons/SVG/Icon-kebab-default.svg'
+import  { Link } from 'react-router-dom'
 
 
 class InventoryList extends React.Component {
@@ -26,13 +27,11 @@ class InventoryList extends React.Component {
 
 
   render() {
-    console.log(this.props.listData[0].name);
-    console.log(this.state.showOption);
-    console.log(this.state.className);
     return (
       <>
         {this.props.listData.map((item) => {
           return(
+            <Link to={`/inventory/${item.id}`}> 
             <div key={item.id} id={item.id} className="inventory__items">
               <div className="inventory__content">
                 <div className="inventory__first-item">
@@ -59,6 +58,7 @@ class InventoryList extends React.Component {
                   <button className={this.state.className}>Remove</button>
               </div>
             </div>  
+            </Link>
           )
         })}
       </>

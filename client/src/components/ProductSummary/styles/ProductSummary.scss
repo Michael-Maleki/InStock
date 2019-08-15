@@ -1,0 +1,209 @@
+@import "variables.scss";
+@import "mixins.scss";
+@import "fonts.scss";
+
+
+.product-summary-section{
+    @include margin-mobile;
+    font-family: 'Avenir Next Regular';
+    color: $primary-color;
+    @include tablet{
+        @include margin-tablet;
+     }
+     @include desktop{
+        @include margin-desktop-grid;
+     }
+
+    
+    &__title{
+        color:$greyshade;
+        font-size:14px;
+        margin-bottom: 16px;
+        @include tablet{
+           
+         } 
+    }
+
+    &__text{
+        font-size:13px;
+        margin-bottom: 24px;
+        @include desktop{
+            font-size:16px;
+         }
+       
+    }
+}
+
+.description-text{
+    @include desktop{
+   margin-right: 40px; 
+  
+     }
+}
+.Full-Top-section{
+    @include tablet{
+        display:flex;
+        border-bottom: 1px solid $text-label-fill;
+        margin-bottom:40px;
+     }
+}
+
+.Top-section{
+    display:flex;
+    justify-content: flex-start;
+    margin-top: 40px;
+    margin-right: 80px;
+    margin-bottom:25px;
+   
+
+    &__Icon{
+       height: 24px;
+       width: 10%;
+       margin-right:15px;
+       @include tablet{
+          margin-top:10px;
+           
+        
+     }
+    }
+    
+    &__header{
+        font-family: 'Avenir Next Bold';
+        font-size: 24px;
+        width:100%;
+        white-space: nowrap;
+        @include tablet{
+            font-size:35px; 
+            
+         } 
+    }
+
+}
+
+.InStock-button{
+    border-radius: 4px;
+    padding:10px 32px;
+    color:$secondary-color;
+    margin-bottom: 40px;
+    background: #27AE60;
+    font-size:16px;
+    @include tablet{
+        padding:5px 32px;
+        margin-top: 45px;
+     } 
+}
+
+
+#Edit-button{
+    width: 288px;
+    border-radius: 4px;
+    background: #004892;
+    color:$secondary-color;
+    font-size:20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Avenir Next Regular';
+    margin-top:20px;
+    @include tablet{
+        font-size:15px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 150px;
+        margin-left: 580px;
+    }
+    @include desktop{
+        margin-left: 920px;
+        margin-top:20px;
+        width: 160px;
+            }
+}
+
+#ordered-reference{
+    @include tablet{
+    display:flex;
+    margin-top:50px;
+    
+    }
+    @include desktop{
+       justify-content: space-between;
+        
+        }
+}
+
+#last-ordered-location{
+    @include tablet{
+        display:flex;
+        flex: 1;
+        margin-top:50px;
+        margin-bottom:50px;
+    }
+    @include desktop{
+        justify-content: space-between;
+         
+         }
+}
+
+
+.Full-Wrapper{
+    @include tablet{
+    border-bottom: 1px solid $text-label-fill; 
+    margin-bottom: 20px;
+    }
+};
+
+.product-summary{
+    @include tablet{
+    flex:.5;
+    }
+}
+
+
+#last-paragraph{
+    color:$primary-color;
+    @include tablet{
+      margin-top:5px;
+        }
+        @include desktop{
+          margin-bottom: 48px;
+              }
+}
+
+.quantity-item{
+    @include tablet{
+        margin-bottom: 50px;
+            }
+    @include desktop{
+        margin-bottom: 50px;
+            }
+  
+}
+
+.contents{
+    @include tablet{
+    }
+    @include desktop{
+        display: flex;
+        margin-top: 30px;
+       
+   
+    }
+}
+
+.description-style{
+  @include desktop{ 
+     
+
+     }
+}
+
+
+.main-content-bottom{
+  @include desktop{
+     
+     margin-top:-50px;
+     white-space: nowrap;
+     }
+}
+
+
+
