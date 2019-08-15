@@ -8,6 +8,8 @@ class InventoryList extends React.Component {
     showOption: false
   }
 
+
+  /******** the function to hide remove option by clicking anywhere ******/
   handleClicksOutside = (event) => {
     //console.dir(event.currentTarget.elements[0].className);
     const outsideClick = event.currentTarget.elements; 
@@ -23,6 +25,7 @@ class InventoryList extends React.Component {
     
   }
 
+/********* The function to pop the remove button when kebab icon is clicked *********/
   showRemoveOption = (event) => {
     if (this.state.showOption === true) {
       event.target.nextSibling.className = 'remove-option-hidden';
@@ -71,7 +74,7 @@ class InventoryList extends React.Component {
 
               <div className="remove">
                   <img className="remove-btn-image" onClick={this.showRemoveOption} src={removeIcon} alt=""/>
-                  <button className='remove-option-hidden' type="submit">Remove</button>
+                  <button className='remove-option-hidden' type="submit" onClick={this.deleteItem}>Remove</button>
               </div>
             </div>  
           )
