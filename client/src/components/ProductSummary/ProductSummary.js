@@ -9,19 +9,19 @@ class ProductSummary extends React.Component{
       }
       
       componentDidMount() {
-        axios.get('//url')
+        axios.get(`http://localhost:8080/inventory/${this.props.match.inventoryId}`)
         .then(response => {
             
             this.setState({
                 isLoaded:true,
-                inventorylist: response.data
+                inventorydata: response.data
             })
         }).catch(error => console.log(error))
     }
     
     render() {
   
-      const {inventorylist} = this.state
+      const {inventorydata} = this.state
   
       if (this.state.isLoaded === false) {
         return (
@@ -33,7 +33,7 @@ class ProductSummary extends React.Component{
             <>  
 								<div className="product-summary-section">
                 {
-                  this.state.inventorylist.map(item => ( 
+                  this.state.inventorydata.map(item => ( 
                 <div key={item.id} className="Full-Wrapper">
                     <div className="Full-Top-section">
 											<div className="Top-section">
