@@ -12,8 +12,11 @@ class Inventory extends React.Component {
     data: dataInventory
   }
 
+ 
+
+
   render() {
-    console.log(this.state.data[0].name);
+
     return (
       <section className="inventory">
         <div className= "inventory__top">
