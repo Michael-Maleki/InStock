@@ -15,7 +15,8 @@
 
 // Imports the header styles from header component
 @import '../components/Header/header.scss';
-
+// Imported productSummary component's styles
+@import '../components/ProductSummary/styles/ProductSummary.scss';
 // Imports the inventory styles from inventory component
 @import '../components/Inventory/inventory.scss';
 
