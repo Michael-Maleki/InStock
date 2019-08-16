@@ -40,7 +40,7 @@ class ProductSummary extends React.Component{
                     <div className="Full-Top-section">
 											<div className="Top-section">
 												<img className="Top-section__Icon" src={Backarrow} alt="back-arrow-icon"/>
-												<h1 className="Top-section__header">Product Name</h1>
+												<h1 className="Top-section__header">{item.name}</h1>
 											</div>
 											<button className="InStock-button" type="submit">In Stock</button>
                     </div>
@@ -49,17 +49,17 @@ class ProductSummary extends React.Component{
 											<	div className="contents">
                         <div  class="description-style">
 													<h3 className="product-summary-section__title">ITEM DESCRIPTION</h3>
-													<p className="product-summary-section__text description-text">{item.description}Here is a more detailed summary of the product name, it’s uses, industries and possible attributes that could be used to describe the product.</p>
+													<p className="product-summary-section__text description-text">{item.description}</p>
                         </div>  
                         <div className="main-content-bottom">
                        <div id="ordered-reference">
                           <div class="product-summary">
 														<h3 className="product-summary-section__title">ORDERED BY</h3>
-														<p className="product-summary-section__text">Mark Saunders{item.name}</p>
+														<p className="product-summary-section__text">Mark Saunders</p>
                           </div>
                           <div>
                             <h3 className="product-summary-section__title">REFERENCE NUMBER</h3>
-                            <p className="product-summary-section__text">JK2020FD7811201</p>
+                            <p className="product-summary-section__text">{item.warehouseId}</p>
                         	</div>
                         </div>
 
@@ -67,19 +67,19 @@ class ProductSummary extends React.Component{
 
                             <div class="product-summary">
                                 <h3 className="product-summary-section__title">LAST ORDERED</h3>
-                                <p className="product-summary-section__text">5/24/2018{item.lastOrdered}</p>
+                                <p className="product-summary-section__text">{item.lastOrdered}</p>
                             </div>
 
                             <div>
                                 <h3 className="product-summary-section__title location">LOCATION</h3>
-                                <p className="product-summary-section__text location">Toronto, CAN{item.location}</p>
+                                <p className="product-summary-section__text location">{item.location}</p>
                             </div>
 
                         </div>
                             <h3 className="product-summary-section__title quantity">QUANTITY</h3>
-                            <p className="product-summary-section__text quantity-item" >12000{item.quantity}</p>
+                            <p className="product-summary-section__text quantity-item" >{item.quantity}</p>
                             <h3 className="product-summary-section__title categories">CATEGORIES</h3>
-                            <p className="product-summary-section__title categories-text" id="last-paragraph">{item.categories}Industrial, Automotive, Heavy, Mechanical, Engineering, Transportation, Sales</p>
+                            <p className="product-summary-section__title categories-text" id="last-paragraph">{item.categories}</p>
                             </div> 
 
                         </div>
