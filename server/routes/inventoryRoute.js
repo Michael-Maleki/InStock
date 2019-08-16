@@ -18,14 +18,16 @@ router.get('/:inventoryId', (req,res) => {
 
 
 router.delete('/', (req, res) => {
+  
   let deletedItemId = req.body.id;
-
+  // console.log(typeof deletedItemId);
+  
   let updatedInventory = inventory.find((item) => {
     return item.id === deletedItemId        
   });
   
   const spliceIt = inventory.indexOf(updatedInventory);
-  console.log(spliceIt);
+  // console.log(spliceIt);
   
   inventory.splice(spliceIt, 1);
   
