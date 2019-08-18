@@ -76,7 +76,7 @@ class InventoryList extends React.Component {
 
               <div className="remove">
                   <img className="remove-btn-image" onClick={this.showRemoveOption} src={removeIcon} alt=""/>
-                  <button className='remove-option-hidden' type="submit" onClick={this.deleteItem}>Remove</button>
+                  <button id ={item.id} className='remove-option-hidden' type="submit" onClick={this.props.deleteItem}>Remove</button>
               </div>
             </div>  
             </Link>
