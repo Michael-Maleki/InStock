@@ -42,7 +42,9 @@ class ProductSummary extends React.Component{
 												<img className="Top-section__Icon" src={Backarrow} alt="back-arrow-icon"/>
 												<h1 className="Top-section__header">{item.name}</h1>
 											</div>
-											<button className="InStock-button" type="submit">In Stock</button>
+											<button className="InStock-button" type="submit">
+                      { item.quantity === '0' ? "Out of stock" : "In Stock"}
+                      </button>
                     </div>
                     <div>
 											<div className="main-content"> 

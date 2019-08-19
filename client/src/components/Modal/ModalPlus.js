@@ -55,7 +55,7 @@ class ModalPlus extends React.Component {
 }
 
 uploadToServer = (event) => {
-  event.preventDefault();
+  // event.preventDefault();
 
   
   Axios.post('http://localhost:8080/inventory', {
@@ -96,19 +96,19 @@ uploadToServer = (event) => {
               <div className='modal__row1'>
                 <div className='modal__row1__product'>
                   <div htmlFor='productInput' className='modal-label'>PRODUCT</div>
-                  <input name='productInput' className='modal-input' placeholder='Item Name' />
+                  <input  required name='productInput' className='modal-input' placeholder='Item Name' />
                 </div>
 
                 <div className='modal__row1__last-ordered'>
                   <div htmlFor='orderedInput' className='modal-label'>LAST ORDERED</div>
-                  <input name='orderedInput' className='modal-input' type='date' placeholder='yyyy-mm-dd' />
+                  <input  required name='orderedInput' className='modal-input' type='date' placeholder='yyyy-mm-dd' />
                 </div>
               </div>
 
               <div className='modal__row2'>
                 <div className='modal__row2__city'>
                   <div htmlFor='cityInput' className='modal-label'>CITY</div>
-                  <input name='cityInput' className='modal-input' placeholder='City' />
+                  <input  required name='cityInput' className='modal-input' placeholder='City' />
                 </div>
 
                 <div className='modal__row2__country'>
@@ -125,7 +125,7 @@ uploadToServer = (event) => {
               <div className='modal__row3'>
                 <div className='modal__row3__quantity'>
                   <div htmlFor='quantityInput' className='modal-label'>QUANTITY</div>
-                  <input name='quantityInput' className='modal-input' placeholder='0' />
+                  <input  required name='quantityInput' className='modal-input' placeholder='0' />
                 </div>
 
                 <div className='modal__row3__switch'>
