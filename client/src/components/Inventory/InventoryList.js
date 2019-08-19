@@ -46,6 +46,10 @@ class InventoryList extends React.Component {
     }
   }
 
+  componentDidMount() {
+    this.setState({showOption: false})
+  }
+
 
   render() {
 
