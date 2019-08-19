@@ -17,4 +17,55 @@ router.get('/:warehouseId', (req, res) => {
 
 })
 
+// router.post('/', (req, res) => {
+//     const { body } = req;
+//     const warehouseKP = {
+//       id,
+//       name,
+//       address:{
+//           street,
+//           suiteNum,
+//           city,
+//           province,
+//           postal,
+//       },
+//       contact:{
+//           name,
+//           title,
+//           phone,
+//           email,
+//       },
+//       inventoryCategories,
+//     };
+
+     
+//      const Newwarehouse = {
+//         router.post('/', (req, res) => {
+//             const { body } = req;
+//             const warehouseKP = {
+//               id,
+//               name,
+//               address:{
+//                   street,
+//                   suiteNum,
+//                   city,
+//                   province,
+//                   postal,
+//               },
+//               contact:{
+//                   name,
+//                   title,
+//                   phone,
+//                   email,
+//               },
+//               inventoryCategories,
+//    let updatedwarehouse = inventory.push(Newwarehouse);
+//     if (warehouseKP === Newwarehouse){
+//     res.json(updatedwarehouse);
+//     }
+//     else{
+//        res.status(404);
+//     }
+//    });
+
 module.exports = router;
