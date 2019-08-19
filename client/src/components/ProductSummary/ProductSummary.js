@@ -62,8 +62,8 @@ class ProductSummary extends React.Component{
 														<p className="product-summary-section__text">Mark Saunders</p>
                           </div>
                           <div>
-                            <h3 className="product-summary-section__title">REFERENCE NUMBER</h3>
-                            <p className="product-summary-section__text">{item.warehouseId}</p>
+                            <h3 className="product-summary-section__title "id="Reference">REFERENCE NUMBER</h3>
+                            <p className="product-summary-section__text" id="Reference-text">{item.warehouseId}</p>
                         	</div>
                         </div>
 
@@ -75,8 +75,8 @@ class ProductSummary extends React.Component{
                             </div>
 
                             <div>
-                                <h3 className="product-summary-section__title location">LOCATION</h3>
-                                <p className="product-summary-section__text location">{item.location}</p>
+                                <h3 className="product-summary-section__title location" id="locate">LOCATION</h3>
+                                <p className="product-summary-section__text location" id="locateid">{item.location}</p>
                             </div>
 
                         </div>
