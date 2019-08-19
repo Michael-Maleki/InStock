@@ -10,6 +10,18 @@ class Inventory extends React.Component {
     isLoaded: false
   }
 
+  deleteInventoryItem = (event) => {
+    event.preventDefault();
+    axios.delete(this.props.urlBuilder('/inventory'), { 
+      data: {
+      id: event.target.id
+      }
+    })
+    .then((response) => {
+      window.location.reload();
+    })
+  }
+
   getInventory = () => {
       axios.get(this.props.urlBuilder('/inventory'))
       .then(resp => {
@@ -27,7 +39,7 @@ class Inventory extends React.Component {
     }
 
     componentDidMount() {
-      this.getInventory()
+      this.getInventory();
     }
 
   render() {
@@ -72,7 +84,7 @@ class Inventory extends React.Component {
             <div>quantity</div>
             <div>status</div>
         </div>
-        <InventoryList listData={this.state.inventoryData}/> 
+        <InventoryList listData={this.state.inventoryData} deleteItem={this.deleteInventoryItem}/> 
       </section>
       </>
     )
