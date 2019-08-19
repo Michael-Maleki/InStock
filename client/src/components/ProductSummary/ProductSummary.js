@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import Backarrow from '../../assets/Icons/SVG/Icon-back-arrow.svg';
+import {Link} from 'react-router-dom';
 
 class ProductSummary extends React.Component{
    
@@ -39,11 +40,11 @@ class ProductSummary extends React.Component{
                 <div key={item.id} className="Full-Wrapper">
                     <div className="Full-Top-section">
 											<div className="Top-section">
-												<img className="Top-section__Icon" src={Backarrow} alt="back-arrow-icon"/>
+                      <Link to={'/inventory'}><img className="Top-section__Icon" src={Backarrow} alt="back-arrow-icon"/></Link>
 												<h1 className="Top-section__header">{item.name}</h1>
 											</div>
 											<button className="InStock-button" type="submit">
-                      { item.quantity === '0' ? "Out of stock" : "In Stock"}
+                      { item.quantity == 0 ? "Out of stock" : "In Stock"}
                       </button>
                     </div>
                     <div>
