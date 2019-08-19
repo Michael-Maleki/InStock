@@ -3,7 +3,8 @@ import searchIcon from '../../assets/Icons/SVG/Icon-search.svg';
 import axios from 'axios';
 import InventoryList from './InventoryList';
 import Header from '../Header/Header.js';
-
+import ModalPlus from '../Modal/ModalPlus';
+// import Modal from 'react-modal';
 class Inventory extends React.Component {
 
   state = {
@@ -84,7 +85,10 @@ class Inventory extends React.Component {
             <div>quantity</div>
             <div>status</div>
         </div>
+
         <InventoryList listData={this.state.inventoryData} deleteItem={this.deleteInventoryItem}/> 
+        <ModalPlus />
+
       </section>
       </>
     )

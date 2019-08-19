@@ -9,26 +9,43 @@ router.get("/", (req, res) => {
   res.status(200).json(inventory);
 });
 
-router.get("/:inventoryId", (req, res) => {
-  let inventoryItem = inventory.filter(inventory => {
-    return inventory.id === req.params.inventoryId;
-  });
-  return !inventoryItem.toString()
-    ? res.status(404).json({ message: "Item does not exist" })
-    : res.status(200).json(inventoryItem);
-});
 
-router.post("/", (req, res) => {
-  const { id,
-    name,
-    description,
-    quantity,
-    lastOrdered,
-    location,
-    isInstock,
-    categories,
-    warehouseId } 
-}
+router.get('/:inventoryId', (req,res) => {
+  
+	let inventoryItem = inventory.filter(inventory => { return inventory.id === req.params.inventoryId})
+  return (!inventoryItem.toString()) ? res.status(404).json({'message': 'Item does not exist'}) : res.status(200).json(inventoryItem)
+})
+
+// router.post("/", (req, res) => {
+//   const { id,
+//     name,
+//     description,
+//     quantity,
+//     lastOrdered,
+//     location,
+//     isInstock,
+//     categories,
+//     warehouseId } 
+// })
+
+router.delete('/', (req, res) => {
+  
+  let deletedItemId = req.body.id;
+  // console.log(typeof deletedItemId);
+  
+  let updatedInventory = inventory.find((item) => {
+    return item.id === deletedItemId        
+  });
+  
+  const spliceIt = inventory.indexOf(updatedInventory);
+  // console.log(spliceIt);
+  
+  inventory.splice(spliceIt, 1);
+  
+
+  res.status(200).json(inventory);
+
+})
 
 
 module.exports = router;

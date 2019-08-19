@@ -1,13 +1,14 @@
 import React from 'react';
-import rightArrow from '../../../assets/Icons/SVG/Icon-arrow-right.svg'
+import rightArrow from '../../../assets/Icons/SVG/Icon-arrow-right.svg';
 // import axios from 'axios';
 import {Link} from 'react-router-dom';
 
 class Location extends React.Component {
   render() {
-    const {address, contact, id, inventoryCategories, name} = this.props.location
-    
-    return(
+    const { address, contact, id, inventoryCategories, name } = this.props.location
+
+    return (
+      <>
       <li className="location__item" id={id}>
         <div className='location__content-flex'>
           <div className='location__top-flex'>
@@ -36,6 +37,8 @@ class Location extends React.Component {
           <img className='location__arrow'src={rightArrow} alt='right-arrow'/>
         </Link>
       </li>
+
+    </>
     )
   }
 }
