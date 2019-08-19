@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
   res.status(200).json(inventory);
 });
 
+
 router.get('/:inventoryId', (req,res) => {
   
 	let inventoryItem = inventory.filter(inventory => { return inventory.id === req.params.inventoryId})
@@ -27,16 +28,17 @@ router.get('/:inventoryId', (req,res) => {
 //     warehouseId } 
 // })
 
-
 router.delete('/', (req, res) => {
+  
   let deletedItemId = req.body.id;
-
+  // console.log(typeof deletedItemId);
+  
   let updatedInventory = inventory.find((item) => {
     return item.id === deletedItemId        
   });
   
   const spliceIt = inventory.indexOf(updatedInventory);
-  console.log(spliceIt);
+  // console.log(spliceIt);
   
   inventory.splice(spliceIt, 1);
   
