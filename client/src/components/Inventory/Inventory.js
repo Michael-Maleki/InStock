@@ -88,6 +88,7 @@ class Inventory extends React.Component {
         </div>
 
         <InventoryList listData={this.state.inventoryData} deleteItem={this.deleteInventoryItem}/> 
+        <ModalPlus />
 
       </section>
       </>

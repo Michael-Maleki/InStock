@@ -58,24 +58,22 @@ uploadToServer = (event) => {
   event.preventDefault();
 
   
-  Axios.post('http://localhost:8080/', {
-      product: event.target.productInput.value,
-      ordered: event.target.orderedInput.value,
-      city: event.target.cityInput.value,
-      country: event.target.countryInput.value,
-      quantity: event.target.quantityInput.value,
-      instock: event.target.instockInput.checked,
+  Axios.post('http://localhost:8080/inventory', {
+      name: event.target.productInput.value,
       description: event.target.descriptionInput.value,
-      
+      quantity: event.target.quantityInput.value,
+      lastOrdered: event.target.orderedInput.value,
+      location: `${event.target.cityInput.value}, ${event.target.countryInput.value}`,
+      isInstock: event.target.instockInput.checked,
       
   });
-  // console.log(event.target.productInput.value);
-  // console.log(event.target.orderedInput.value);
-  // console.log(event.target.cityInput.value);
-  // console.log(event.target.countryInput.value);
-  // console.log(event.target.quantityInput.value);
-  // console.log(event.target.instockInput.checked);
-  // console.log(event.target.descriptionInput.value);
+  console.log(event.target.productInput.value);
+  console.log(event.target.orderedInput.value);
+  console.log(event.target.cityInput.value);
+  console.log(event.target.countryInput.value);
+  console.log(event.target.quantityInput.value);
+  console.log(event.target.instockInput.checked);
+  console.log(event.target.descriptionInput.value);
 }
 
   render() {
