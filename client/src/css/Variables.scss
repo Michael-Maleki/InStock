@@ -1,15 +1,17 @@
 // Global Variables
 $paragraph-text: #323232;
-$text-label-fill: #AFAFAF;
-$field-border: #E1E1E1; 
-$text-field-bg-fill: #FAFAFA;
+$text-label-fill: #afafaf;
+$field-border: #e1e1e1;
+$text-field-bg-fill: #fafafa;
 
-$nav-bg-fill: #323232; 
-$primary-cta: #0095FF ;
-$primary-cta-hover: #0065AD;
+$nav-bg-fill: #323232;
+$primary-cta: #0095ff;
+$primary-cta-hover: #0065ad;
 
-$Tablet: 'only screen and (min-width: 550px)';
-$Desktop: 'only screen and (min-width: 1200px)';
+
+$Mobile: "only screen and (min-width: 320px)";
+$Tablet: "only screen and (min-width: 550px)";
+$Desktop: "only screen and (min-width: 1200px)";
 
 //Setting up the grids
 $gutter: 2.4rem;
@@ -19,19 +21,19 @@ $column--desktop: 6.8rem;
 
 //Importing fonts
 @font-face {
-    font-family: "AvenirBold";
-    src: url("../assets/fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Bold.otf") format('opentype'),
-         url("../assets/fonts/AvenirNextProLT/Alternative\ files/Linotype - Avenir Next LT Pro Bold.ttf") format('truetype')
+  font-family: "AvenirBold";
+  src: url("../assets/fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Bold.otf") format("opentype"),
+    url("../assets/fonts/AvenirNextProLT/Alternative\ files/Linotype - Avenir Next LT Pro Bold.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "AvenirDemiBold";
-    src: url("../assets/fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Demi.otf") format('opentype'),
-         url("../assets/fonts/AvenirNextProLT/Alternative\ files/Linotype - Avenir Next LT Pro Demi.ttf") format('truetype');
+  font-family: "AvenirDemiBold";
+  src: url("../assets/fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Demi.otf") format("opentype"),
+    url("../assets/fonts/AvenirNextProLT/Alternative\ files/Linotype - Avenir Next LT Pro Demi.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "AvenirRegular";
-    src: url("../assets/fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Regular.otf") format('opentype'),
-         url("../assets/fonts/AvenirNextProLT/Alternative\ files/Linotype - Avenir Next LT Pro.ttf") format('truetype');
+  font-family: "AvenirRegular";
+  src: url("../assets/fonts/AvenirNextProLT/Linotype\ -\ AvenirNextLTPro-Regular.otf") format("opentype"),
+    url("../assets/fonts/AvenirNextProLT/Alternative\ files/Linotype - Avenir Next LT Pro.ttf") format("truetype");
 }
