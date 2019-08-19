@@ -96,6 +96,7 @@
 
 
 #Edit-button{
+    display: block;
     width: 288px;
     border-radius: 4px;
     background: #004892;
@@ -110,10 +111,10 @@
         padding-top: 10px;
         padding-bottom: 10px;
         width: 150px;
-        margin-left: 580px;
+        margin-left:auto;   
     }
     @include desktop{
-        margin-left: 920px;
+        margin-left: auto;
         margin-top:20px;
         width: 160px;
             }
@@ -126,10 +127,12 @@
     
     }
     @include desktop{
-       justify-content: space-between;
-        
+      justify-content: space-between;
+       
         }
 }
+
+
 
 #last-ordered-location{
     @include tablet{
@@ -148,6 +151,7 @@
 .Full-Wrapper{
     @include tablet{
     border-bottom: 1px solid $text-label-fill; 
+   
     margin-bottom: 20px;
     }
 };

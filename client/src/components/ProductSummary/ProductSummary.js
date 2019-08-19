@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 import Backarrow from '../../assets/Icons/SVG/Icon-back-arrow.svg';
 import {Link} from 'react-router-dom';
+import Header from '../Header/Header';
 
 class ProductSummary extends React.Component{
    
@@ -33,7 +34,7 @@ class ProductSummary extends React.Component{
 
       } else
         return (
-            <>  
+            <>  <Header/>
 								<div className="product-summary-section">
                 {
                   this.state.inventorydata.map(item => ( 
@@ -84,11 +85,12 @@ class ProductSummary extends React.Component{
                             <h3 className="product-summary-section__title categories">CATEGORIES</h3>
                             <p className="product-summary-section__title categories-text" id="last-paragraph">{item.categories}</p>
                             </div> 
-
-                        </div>
-                        </div>
+                            </div>
                      </div>
+                     </div>
+                     
 										 <button id="Edit-button" type="submit">EDIT</button>
+                    
                     </div>  
                     ))};
                   </div>      
