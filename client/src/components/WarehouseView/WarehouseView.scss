@@ -1,6 +1,7 @@
 
 .warehouse-view {
   background: #FAFAFA;
+
   &__top {
     background: white;
     @media screen and (min-width: 550px) {
@@ -9,6 +10,12 @@
       justify-content: space-between; 
       padding: 2rem 0 1rem 0;
     }
+  }
+
+  &__nothing {
+    margin-top: 50px;
+     @extend %header-section;
+    @extend %margin--wrapper;
   }
 
   &--heading {
@@ -185,3 +192,6 @@
   z-index: 10;
 }
 
+.flex {
+  display: flex;
+}

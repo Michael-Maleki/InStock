@@ -1,7 +1,9 @@
 import React from "react";
 import axios from "axios";
-// import {Link} from 'react-router-dom';
+import {Link} from 'react-router-dom';
 import InventoryList from "../Inventory/InventoryList";
+import Backarrow from '../../assets/Icons/SVG/Icon-back-arrow.svg';
+
 // import locations from '../../data/locations.json'
 import Header from "../Header/Header.js";
 
@@ -16,14 +18,12 @@ class WarehouseView extends React.Component {
     } else if (state.error) {
       return (
         <>
-          <section className="inventory">
-            <div className="inventory__top">
-              <h1 className="inventory--heading">Inventory</h1>
-              <input
-                className="warehouse__search"
-                type="search"
-                placeholder="Search"
-              />
+          <section className="warehouse-view">
+            <div className="warehouse-view__top">
+                <div className="Top-section--warehouseList">
+                <Link to={'/warehouse'}><img className="Top-section__Icon" src={Backarrow} alt="back-arrow-icon"/></Link>
+                  <h1 className="Top-section__header">{state.locationData.name}</h1>
+                </div>              
             </div>
             <div className="inventory--categories top-display--categories">
               <div id="only-item">item</div>
@@ -32,8 +32,8 @@ class WarehouseView extends React.Component {
               <div>quantity</div>
               <div>status</div>
             </div>
-            <h1>This warehouse has no inventory</h1>
           </section>
+            <h1 className="warehouse-view__nothing">This warehouse has no inventory</h1>
         </>
       );
     } else
@@ -41,7 +41,11 @@ class WarehouseView extends React.Component {
         <>
           <section className="warehouse-view">
             <div className="warehouse-view__top">
-              <h1 className="warehouse-view--heading">{state.locationData.name}</h1>
+                <div className="Top-section--warehouseList">
+                      <Link to={'/warehouse'}><img className="Top-section__Icon" src={Backarrow} alt="back-arrow-icon"/></Link>
+												<h1 className="Top-section__header">{state.locationData.name}</h1>
+											</div>
+
             <div className='warehouse-view__info-wrapper'>
               <span className='warehouse-view__contact'>
                 <p className="warehouse-view__label">Address</p>
@@ -67,11 +71,24 @@ class WarehouseView extends React.Component {
               <div>quantity</div>
               <div>status</div>
             </div>
-            <InventoryList listData={state.warehouseInventory}/>
+            <InventoryList listData={state.warehouseInventory} deleteItem={this.deleteInventoryItem}/>
           </section>
         </>
       );
   };
+
+  deleteInventoryItem = (event) => {
+    event.preventDefault();
+    axios.delete(this.props.urlBuilder('/inventory'), { 
+      data: {
+      id: event.target.id
+      }
+    })
+    .then((response) => {
+      window.location.reload();
+    })
+  }
+
 
   getWarehouses = () => {
     axios
