@@ -26,7 +26,7 @@ router.post('/', (req, res) => {
     categories,
      } = req.body;
    const Newinventory = {
-    id: 123,
+    id: uuid(),
     name,
     description,
     quantity,

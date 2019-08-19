@@ -46,7 +46,7 @@ class InventoryList extends React.Component {
 
   render() {
 
-    //console.log(this.state.showOption);
+    console.log(this.props.listData);
 
     return (
       <form onClick={this.handleClicksOutside}>
