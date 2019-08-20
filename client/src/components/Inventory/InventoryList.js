@@ -96,5 +96,4 @@ class InventoryList extends React.Component {
   }
 }
 
-
 export default InventoryList;
