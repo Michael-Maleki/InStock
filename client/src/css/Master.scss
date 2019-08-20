@@ -13,10 +13,19 @@
 @import '../components/Warehouses/Location/Location.scss';
 @import '../components/Warehouses/Warehouses.scss';
 
+@import '../components/WarehouseView/WarehouseView.scss';
+
 // Imports the header styles from header component
 @import '../components/Header/header.scss';
+
+// Imports Modal Styles
+@import '../components/Modal/ModalPlus.scss';
+
+// Imported productSummary component's styles
+@import '../components/ProductSummary/styles/ProductSummary.scss';
 
 // Imports the inventory styles from inventory component
 @import '../components/Inventory/inventory.scss';
 
-@import '../components/WarehouseView/WarehouseView.scss'
+
+

@@ -17,4 +17,49 @@ router.get('/:warehouseId', (req, res) => {
 
 })
 
+
+router.post('/', (req, res) => {
+    const {
+      name,
+      address:{
+          street,
+          suiteNum,
+          city,
+          province,
+          postal,
+      },
+      contact:{
+          contactName,
+          title,
+          phone,
+          email,
+      }
+     } = req.body;
+       
+     const Newwarehouse = {
+      id: uuid(),
+      name,
+      address:{
+          street,
+          suiteNum,
+          city,
+          province,
+          postal,
+      },
+      contact:{
+          contactName,
+          title,
+          phone,
+          email,
+      }
+    };
+    if (Newwarehouse){
+    res.json(Newwarehouse);
+    inventory.push(Newwarehouse);
+    }
+    else{
+       res.status(400);
+    }
+   });
+  
 module.exports = router;
