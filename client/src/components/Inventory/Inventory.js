@@ -1,51 +1,51 @@
-import React from 'react';
-import searchIcon from '../../assets/Icons/SVG/Icon-search.svg'; 
-import axios from 'axios';
-import InventoryList from './InventoryList';
-import Header from '../Header/Header.js';
-import ModalPlus from '../Modal/ModalPlus';
-// import Modal from 'react-modal';
-class Inventory extends React.Component {
+import React from "react";
+import axios from "axios";
+import InventoryList from "./InventoryList";
+import Header from "../Header/Header.js";
+import ModalPlus from "../Modal/ModalPlus";
 
+class Inventory extends React.Component {
   state = {
-    isLoaded: false
-  }
+    isLoaded: false,
+  };
 
   deleteInventoryItem = (event) => {
     event.preventDefault();
-    axios.delete(this.props.urlBuilder('/inventory'), { 
-      data: {
-      id: event.target.id
-      }
-    })
-    .then((response) => {
-      window.location.reload();
-    })
-  }
+    axios
+      .delete(this.props.urlBuilder("/inventory"), {
+        data: {
+          id: event.target.id,
+        },
+      })
+      .then((response) => {
+        window.location.reload();
+      });
+  };
 
   getInventory = () => {
-      axios.get(this.props.urlBuilder('/inventory'))
-      .then(resp => {
-          const {data} = resp
-          this.setState({
-              isLoaded:true,
-              inventoryData: data
-          })
-      }).catch(error => {
+    axios
+      .get(this.props.urlBuilder("/inventory"))
+      .then((resp) => {
+        const { data } = resp;
+        this.setState({
+          isLoaded: true,
+          inventoryData: data,
+        });
+      })
+      .catch((error) => {
         this.setState({
           error: error,
-          isLoaded: true
-        })
-      })
-    }
+          isLoaded: true,
+        });
+      });
+  };
 
-    componentDidMount() {
-      this.getInventory();
-    }
+  componentDidMount() {
+    this.getInventory();
+  }
 
   render() {
-
-    const {isLoaded, error} = this.state
+    const { isLoaded, error } = this.state;
 
     if (error) {
       return (
@@ -66,34 +66,36 @@ class Inventory extends React.Component {
         </>
       );
     } else
-    return (
-      <>
-      <Header />
-      <section className="inventory">
-        <div className= "inventory__top">
-          <h1 className="inventory--heading">Inventory</h1>
-          <div className="search-box">
-            <img className="search-box__icon" src={searchIcon} alt="" />
-            <input className="search-box__input" type="name" placeholder="Search" />
-          </div>
-        </div>
-        
-        <div className="inventory--categories top-display--categories">
-            <div id="only-item">item</div>
-            <div>last ordered</div>
-            <div>location</div>
-            <div>quantity</div>
-            <div>status</div>
-        </div>
+      return (
+        <>
+          <Header />
+          <section className="inventory">
+            <header className="inventory__header">
+              <h1 className="inventory__title">Inventory</h1>
+              <input
+                className="inventory__search"
+                type="search"
+                placeholder="Search"
+              />
+            </header>
 
-        <InventoryList listData={this.state.inventoryData} deleteItem={this.deleteInventoryItem}/> 
-        <ModalPlus />
+            <div className="inventory--categories top-display--categories">
+              <div id="only-item">item</div>
+              <div>last ordered</div>
+              <div>location</div>
+              <div>quantity</div>
+              <div>status</div>
+            </div>
 
-      </section>
-      </>
-    )
+            <InventoryList
+              listData={this.state.inventoryData}
+              deleteItem={this.deleteInventoryItem}
+            />
+            <ModalPlus />
+          </section>
+        </>
+      );
   }
 }
-
 
 export default Inventory;

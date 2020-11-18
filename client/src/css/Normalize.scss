@@ -46,4 +46,9 @@ blockquote {
 button, input, 
 textarea {
   border: none;
+  border-style: none;
+
+  &:focus {
+    border-style: none;
+  }
 }

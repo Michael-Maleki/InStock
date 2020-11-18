@@ -1,31 +1,73 @@
 * {
-  @include font-family('AvenirRegular');
+  @include font-family("AvenirRegular");
 }
 
-
 .inventory {
-
-  &__top {
-    @media screen and (min-width: 550px) {
-      display: flex;
-      justify-content: space-between; 
-      padding: 2rem 0 1rem 0;
-    }
-  }
-
-  &--heading {
-    @extend %header-section;
+  &__header {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3.2rem;
     @extend %margin--wrapper;
-    padding: 2rem 0 1rem 0;
-    @media screen and (min-width: 550px) { 
-      padding: 0;
+
+    @media #{$Tablet} {
+      flex-direction: row;
+      align-items: center;
+      margin-top: 4.8rem;
+      margin-bottom: 2.4rem;
     }
   }
-  
+
+  &__title {
+    @extend %header-section;
+    margin-bottom: 1.6rem;
+
+    @media #{$Tablet} {
+      // margin-top: 4.8rem;
+      margin-bottom: 0;
+    }
+  }
+
+  &__search {
+    @extend %paragraph-regular;
+    @include media-max-width(Mobile, 3.25, 3);
+
+    background: url("../../assets/Icons/SVG/Icon-search.svg"),
+      $text-field-bg-fill;
+    background-repeat: no-repeat;
+    background-position-y: center;
+    background-position-x: 16px;
+
+    color: $paragraph-text;
+    border: 1px solid $field-border;
+    height: 4.9rem;
+    padding: 16px 0 16px 40px;
+    margin-bottom: 0.8rem;
+    border-radius: 4px;
+
+    &::placeholder {
+      color: $paragraph-text;
+      opacity: 1;
+    }
+
+    &:focus {
+      border: 1px solid $primary-cta;
+    }
+
+    @media #{$Tablet} {
+      width: 190px;
+      margin-left: auto;
+      margin-bottom: 0;
+      height: 4.8rem;
+      // margin-top: 4.8rem;
+    }
+
+    @media #{$Desktop} {
+      width: 252px;
+    }
+  } //End of search bar styling
+
   &--categories {
-    //@extend %margin--wrapper;
-    //@extend %padding--mobile;
-    @include font-family('AvenirRegular');
+    @include font-family("AvenirRegular");
     @extend %paragraph-label;
     color: $text-label-fill;
     text-transform: uppercase;
@@ -38,7 +80,7 @@
     display: none;
     @extend %margin--wrapper;
 
-    @media screen and (min-width: 550px) {  
+    @media screen and (min-width: 550px) {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -46,23 +88,21 @@
   }
 
   #only-item {
-    @media screen and (min-width: 550px) {  
+    @media screen and (min-width: 550px) {
       width: 17rem;
     }
   }
 
   .top-display--categories > div {
     padding: 2rem 0 0 0;
-    @media screen and (min-width: 550px) {  
+    @media screen and (min-width: 550px) {
       width: 8rem;
-
     }
   }
 
   &__items {
     position: relative;
   }
-
 
   &__content {
     @extend %bottom-divider;
@@ -91,7 +131,6 @@
       flex-flow: column nowrap;
       height: 12rem;
     }
-
   }
 
   &__products--details {
@@ -108,7 +147,6 @@
     @media screen and (min-width: 550px) {
       width: 17rem;
     }
-
   }
 
   .product-description {
@@ -116,59 +154,46 @@
     @media screen and (min-width: 550px) {
       width: 17rem;
     }
-
   }
 }
-
 
 .search-box {
+  @extend %paragraph-regular;
+  @include media-max-width(Mobile, 3.25, 3);
 
-  @media screen and (min-width: 550px) {
-    width: 40%;
+  background: url("../../assets/Icons/SVG/Icon-search.svg"), $text-field-bg-fill;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  background-position-x: 16px;
+
+  color: $paragraph-text;
+  border: 1px solid $field-border;
+  height: 4.9rem;
+  padding: 16px 0 16px 40px;
+  margin-bottom: 0.8rem;
+  border-radius: 4px;
+
+  &::placeholder {
+    color: $paragraph-text;
+    opacity: 1;
   }
 
-  @media screen and (min-width: 1200px) {
-    width: 35%;
+  &:focus {
+    border: 1px solid $primary-cta;
   }
 
-  &__icon {
-    width: 2.2rem;
-    position: absolute;
-    top: 13.4rem;
-    left: 2.4rem;
-    @media screen and (min-width: 550px) {
-      left: 48rem;
-      top: 9rem;
-    }
-    @media screen and (min-width: 1200px) {
-      left: 94.5rem;
-    }
-    
+  @media #{$Tablet} {
+    width: 190px;
+    margin-left: auto;
+    margin-bottom: 0;
+    height: 4.8rem;
+    // margin-top: 4.8rem;
   }
 
-  &__input {
-    @extend %margin--wrapper;
-    @extend %paragraph-regular;
-    height: 5rem;
-    width: 82%;
-    border-radius: 4px;
-    border: 1px solid #efefef;
-    outline: none;
-    padding-left: 3rem;
-
-
-    @media screen and (min-width: 1200px) {
-      margin: 0;
-      width: 60%;
-    }
-
-    
+  @media #{$Desktop} {
+    width: 252px;
   }
-
-  &__input::placeholder {
-    color: black;
-  }
-}
+} //End of search bar styling
 
 .remove {
   position: absolute;
@@ -191,7 +216,6 @@
 
 .remove-option-hidden {
   display: none;
-  
 }
 
 .remove-option-displayed {
@@ -205,4 +229,3 @@
   border-radius: 4px;
   z-index: 10;
 }
-
