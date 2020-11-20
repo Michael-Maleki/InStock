@@ -13,7 +13,6 @@
       align-items: center;
       margin-top: 4.8rem;
       margin-bottom: 2.4rem;
-
     }
   }
 
@@ -27,18 +26,19 @@
     }
   }
 
-&__search {
+  &__search {
     @extend %paragraph-regular;
     @include media-max-width(Mobile, 3.25, 3);
 
-    background: url('../../assets/Icons/SVG/Icon-search.svg'), $text-field-bg-fill;
+    background: url("../../assets/Icons/SVG/Icon-search.svg"),
+      $text-field-bg-fill;
     background-repeat: no-repeat;
     background-position-y: center;
     background-position-x: 16px;
-    
+
     color: $paragraph-text;
     border: 1px solid $field-border;
-    height: 4.9rem; 
+    height: 4.9rem;
     padding: 16px 0 16px 40px;
     margin-bottom: 0.8rem;
     border-radius: 4px;
@@ -71,7 +71,6 @@
     color: grey;
 
     @media #{$Desktop} {
-      
     }
   }
 
@@ -79,13 +78,12 @@
     @extend %paragraph-label;
     color: grey;
   }
-  
+
   &__list {
     justify-content: space-between;
 
     @media #{$Desktop} {
       // max-width: percentage(80.4rem / 108.0rem);
-
     }
   }
 }
